@@ -1,6 +1,8 @@
 # folders
 .idea
 node_modules
+dist
 
 # files
 .env
+src/assets/**/*.css

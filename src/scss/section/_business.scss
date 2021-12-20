@@ -1,0 +1,39 @@
+@import "../_variables.scss";
+
+.scn-business {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  background-color: #f4f7fa;
+
+  &__title {
+    margin: 0 0 16px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__description {
+    margin: 0 auto;
+    max-width: 1122px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    &__title {
+      margin-bottom: 24px;
+      font-size: 60px;
+      line-height: 73px;
+    }
+    &__description {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}

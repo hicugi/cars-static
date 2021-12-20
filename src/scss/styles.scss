@@ -1,0 +1,49 @@
+@import "./_variables.scss";
+@import "./_fonts.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-width: 320px;
+  color: #061e4e;
+  font-family: "ProximaNova", sans-serif;
+
+  @media (max-width: #{$breakpoint-tablet - 0.002}) {
+    padding-top: 62px;
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding-inner;
+  padding-right: $container-padding-inner;
+  max-width: 1568px;
+}
+.btn {
+  display: inline-block;
+  border: none;
+
+  &_size-large {
+    padding: 17px 20px 18px;
+    width: 100%;
+    max-width: 370px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    text-transform: uppercase;
+  }
+  &_variant-primary {
+    background-color: $color-primary;
+    color: #ffffff;
+  }
+}

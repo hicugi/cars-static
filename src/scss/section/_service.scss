@@ -1,0 +1,113 @@
+@import "../_variables.scss";
+
+.scn-service {
+  padding-top: 64px;
+  padding-bottom: 100px;
+
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__image {
+      margin-bottom: 50px;
+      position: relative;
+      background: no-repeat center;
+      background-size: cover;
+
+      &::before {
+        padding-top: 100%;
+        display: block;
+        content: "";
+      }
+
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.00001;
+      }
+
+      &::after {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        height: 13px;
+        content: "";
+      }
+    }
+
+    &__title {
+      margin: 0 0 24px;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 48px;
+    }
+    &__description {
+      margin: 0;
+      max-width: 464px;
+      color: #292b34;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+
+    @mixin itemColor($nth, $color) {
+      &__item:nth-child(#{$nth}) &__image::after {
+        background-color: $color;
+      }
+    }
+    @include itemColor(1, #295ca7);
+    @include itemColor(2, #6a9ce7);
+    @include itemColor(3, #94bdfa);
+  }
+
+  @media (max-width: $breakpoint-tablet - 0.0002) {
+    &-list__item {
+      & + & {
+        margin-top: 64px;
+      }
+    }
+  }
+  @media (min-width: $breakpoint-tablet) {
+    &-list {
+      $gap: 5px;
+      margin-left: #{-$gap};
+      margin-right: #{-$gap};
+      display: flex;
+
+      &__item {
+        padding-left: $gap;
+        padding-right: $gap;
+        width: 33.33333%;
+      }
+    }
+  }
+  @media (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-laptop-large - 0.0002}) {
+    &-list {
+      &__title,
+      &__description {
+        padding-right: 10px;
+      }
+    }
+  }
+  @media (min-width: $breakpoint-laptop-large) {
+    &__title {
+      font-size: 48px;
+      line-height: 64px;
+    }
+
+    &-list {
+      $gap: 15px;
+      margin-left: #{-$gap};
+      margin-right: #{-$gap};
+
+      &__item {
+        padding-left: $gap;
+        padding-right: $gap;
+      }
+    }
+  }
+}

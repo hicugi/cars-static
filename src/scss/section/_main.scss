@@ -1,0 +1,108 @@
+@import "../_variables.scss";
+
+.scn-main {
+  z-index: 0;
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 40px;
+  min-height: calc(100vh - 62px);
+  background: url("/assets/img/main-bg-sm.jpeg") no-repeat center;
+  background-size: cover;
+  color: #ffffff;
+
+  &::before {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #295ca7;
+    opacity: 0.65;
+    content: "";
+  }
+
+  &__logo {
+    margin: 0 auto 24px;
+    display: block;
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__description {
+    margin: 0 0 24px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @mixin flagIcon($file, $width, $height, $gap) {
+    span {
+      padding-left: #{$width + 17};
+      line-height: $height;
+
+      &::before {
+        width: $width;
+        height: $height;
+        background-image: url("/assets/img/#{$file}");
+      }
+    }
+  }
+  &__flag {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      $img-width: 62px;
+
+      display: inline-block;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: no-repeat center;
+        background-size: contain;
+        content: "";
+      }
+    }
+
+    @include flagIcon("flag-sm.jpeg", 62px, 36px, 17);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 138px;
+    min-height: 666px;
+    background-image: url("/assets/img/main-bg.jpeg");
+
+    &__logo {
+      margin-bottom: 36px;
+    }
+    &__title {
+      margin-bottom: 0;
+      font-size: 36px;
+      line-height: 44px;
+    }
+    &__description {
+      margin-bottom: 36px;
+      font-size: 60px;
+      line-height: 73px;
+    }
+    &__flag {
+      @include flagIcon("flag.jpeg", 90px, 53px, 24);
+    }
+  }
+}

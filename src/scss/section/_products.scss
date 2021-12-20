@@ -1,0 +1,145 @@
+@import "../_variables.scss";
+
+.scn-products {
+  margin-bottom: 88px;
+
+  &__header {
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    text-transform: uppercase;
+    white-space: pre-wrap;
+  }
+  &__show-more-link {
+    display: inline-block;
+    color: $color-primary;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-list {
+    padding: 0;
+    list-style: none;
+
+    &__item {
+      position: relative;
+    }
+
+    &__image {
+      position: relative;
+      margin: 0 auto 24px;
+      display: block;
+      background: no-repeat center;
+      background-size: contain;
+
+      &::before {
+        padding-top: 45.549738%;
+        display: block;
+        content: "";
+      }
+
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.00001;
+      }
+    }
+    &__title {
+      margin: 0 0 16px;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 2em;
+      text-align: center;
+
+      // TODO: modified styles for product title
+      font-size: 26px;
+      line-height: 1.5em;
+    }
+
+    &__link {
+      display: block;
+      color: $color-primary;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 2em;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      // TODO: modified styles for product link
+      font-size: 20px;
+      line-height: 1.2em;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+      }
+    }
+  }
+
+  &-list + &__header {
+    margin-top: 100px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &__header {
+      margin-bottom: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__title {
+      margin-bottom: 0;
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      &__item {
+        $padding-side: 6px;
+        padding-left: $padding-side;
+        padding-right: $padding-side;
+        width: 50%;
+      }
+    }
+  }
+  @media (min-width: 1080px) {
+    &-list__item {
+      width: 25%;
+    }
+  }
+  @media (min-width: 1520px) {
+    &-list__item {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
