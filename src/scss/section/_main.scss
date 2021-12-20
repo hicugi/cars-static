@@ -3,10 +3,8 @@
 .scn-main {
   z-index: 0;
   position: relative;
-  padding-top: 120px;
   padding-bottom: 40px;
   min-height: calc(100vh - 62px);
-  background: url("/assets/img/main-bg-sm.jpeg") no-repeat center;
   background-size: cover;
   color: #ffffff;
 
@@ -22,12 +20,36 @@
     content: "";
   }
 
+  &-bg {
+    &__sm,
+    &__lg {
+      z-index: -2;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: no-repeat center;
+      background-size: cover;
+    }
+    @media (max-width: #{$breakpoint-tablet - 0.002}) {
+      &__lg {
+        display: none;
+      }
+    }
+    @media (min-width: $breakpoint-tablet) {
+      &__sm {
+        display: none;
+      }
+    }
+  }
+
   &__logo {
     margin: 0 auto 24px;
     display: block;
   }
 
-  &__title {
+  &__under-title {
     margin: 0 0 8px;
     font-size: 18px;
     font-weight: 600;
@@ -35,13 +57,21 @@
     text-align: center;
     text-transform: uppercase;
   }
-  &__description {
+  &__title {
     margin: 0 0 24px;
     font-size: 36px;
     font-weight: 700;
     line-height: 1em;
     text-align: center;
     text-transform: uppercase;
+  }
+  &__description {
+    margin: 0 auto;
+    max-width: 918px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: center;
   }
 
   @mixin flagIcon($file, $width, $height, $gap) {
@@ -84,24 +114,22 @@
   }
 
   @media (min-width: $breakpoint-tablet) {
-    padding-top: 138px;
     min-height: 666px;
-    background-image: url("/assets/img/main-bg.jpeg");
 
     &__logo {
       margin-bottom: 36px;
     }
-    &__title {
+    &__under-title {
       margin-bottom: 0;
       font-size: 36px;
       line-height: 44px;
     }
-    &__description {
-      margin-bottom: 36px;
+    &__title {
       font-size: 60px;
       line-height: 73px;
     }
     &__flag {
+      margin-top: 36px;
       @include flagIcon("flag.jpeg", 90px, 53px, 24);
     }
   }
