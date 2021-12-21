@@ -6,3 +6,4 @@ dist
 # files
 .env
 src/assets/**/*.css
+.DS_Store
