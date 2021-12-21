@@ -13,39 +13,20 @@
     <main>
       <section class="scn-main">
         <div class="scn-main-bg">
-          <div
-            class="scn-main-bg__sm"
-            style="
-              background-image: url('/mainassets/images/ford-commercial-solutions/main-bg-sm.jpeg');
-            "
-          ></div>
-          <div
-            class="scn-main-bg__lg"
-            style="
-              background-image: url('/mainassets/images/ford-commercial-solutions/main-bg.jpeg');
-            "
-          ></div>
+          <div class="scn-main-bg__sm" style="background-image: url('/mainassets/images/ford-commercial-solutions/main-bg-sm.jpeg')"></div>
+          <div class="scn-main-bg__lg" style="background-image: url('/mainassets/images/ford-commercial-solutions/main-bg.jpeg')"></div>
         </div>
 
         <div class="container">
           <picture
-            ><source
-              srcset="/mainassets/images/ford-commercial-solutions/logo.webp"
-              type="image/webp" />
-            <img
-              class="scn-main__logo"
-              src="/mainassets/images/ford-commercial-solutions/logo.png"
-              alt="Chevrolet logo"
-              type="image/png"
+            ><source srcset="/mainassets/images/ford-commercial-solutions/logo.webp" type="image/webp" />
+            <img class="scn-main__logo" src="/mainassets/images/ford-commercial-solutions/logo.png" alt="Chevrolet logo" type="image/png"
           /></picture>
 
           <h1 class="scn-main__title">FORD COMMERCIAL SOLUTIONS</h1>
           <p class="scn-main__description">
-            Integrated products and services tailored to meet the unique demands
-            of fleet professionals. Whether you need to increase vehicle uptime
-            and productivity, reduce maintenance costs, manage compliance, or
-            improve efficiency in other ways – we can deliver the right
-            solutions you need for your business.
+            Integrated products and services tailored to meet the unique demands of fleet professionals. Whether you need to increase vehicle uptime and productivity, reduce
+            maintenance costs, manage compliance, or improve efficiency in other ways – we can deliver the right solutions you need for your business.
           </p>
         </div>
       </section>
@@ -55,17 +36,11 @@
           <h2 class="scn-business__title">WE LISTEN TO EXPERTS</h2>
           <div class="scn-business__description">
             <p>
-              We listen to the experts: the fleet managers and drivers. By
-              combining their experience with our unrivaled knowledge of Ford
-              vehicles, we create tools to unlock manufacturer-grade vehicle
-              data and transform it into valuable information and insights.
+              We listen to the experts: the fleet managers and drivers. By combining their experience with our unrivaled knowledge of Ford vehicles, we create tools to unlock
+              manufacturer-grade vehicle data and transform it into valuable information and insights.
             </p>
             <p>
-              <strong
-                >Our products are continually evolving too, so that you’ll
-                always benefit from the latest solutions, direct from
-                Ford.</strong
-              >
+              <strong>Our products are continually evolving too, so that you’ll always benefit from the latest solutions, direct from Ford.</strong>
             </p>
           </div>
         </div>
@@ -79,20 +54,13 @@
 
           <template id="scnOfferItemTemplate">
             <li class="scn-offer-list-item">
-              <div
-                class="scn-offer-list-item__col scn-offer-list-item__col_image"
-              >
+              <div class="scn-offer-list-item__col scn-offer-list-item__col_image">
                 <div class="scn-offer-list__image">
-                  <span
-                    data-image
-                    style="background-image:url('/mainassets/images/ford-commercial-solutions/offer/{{ image }}.jpg');"
-                  ></span>
+                  <span data-image style="background-image:url('/mainassets/images/ford-commercial-solutions/offer/{{ image }}.jpg');"></span>
                 </div>
               </div>
 
-              <div
-                class="scn-offer-list-item__col scn-offer-list-item__col_info"
-              >
+              <div class="scn-offer-list-item__col scn-offer-list-item__col_info">
                 <div class="scn-offer-list__info">
                   <h4 class="scn-offer-list__title">{{ title }}</h4>
                   <p class="scn-offer-list__description">{{ description }}</p>
@@ -103,15 +71,12 @@
           </template>
           <script>
             const elmList = document.querySelector("#scnOfferList");
-            const template = document.querySelector(
-              "#scnOfferItemTemplate"
-            ).content;
+            const template = document.querySelector("#scnOfferItemTemplate").content;
 
             [
               {
                 title: "FORD TELEMATICS™",
-                description:
-                  "Ford Telematics™ is a web application that gives you a real-time window into your fleet operations.",
+                description: "Ford Telematics™ is a web application that gives you a real-time window into your fleet operations.",
                 btnText: "EXPLORE FORD TELEMATICS",
                 image: "telematics",
                 imagePosition: "left center",
@@ -132,8 +97,7 @@
               },
               {
                 title: "WEX FUEL CARDS",
-                description:
-                  "WEX Fuel Cards let you keep track of your fleet fuel expenses in real-time as well as a range of other benefits.",
+                description: "WEX Fuel Cards let you keep track of your fleet fuel expenses in real-time as well as a range of other benefits.",
                 btnText: "EXPLORE WEX FUEL CARDS",
                 image: "wex-fuel-cards",
               },
@@ -182,49 +146,25 @@
             <!-- name -->
             <div class="scn-contacts-field">
               <label class="scn-contacts-field__label">Full Name</label>
-              <input
-                class="scn-contacts-field__input"
-                type="text"
-                name="fullName"
-                placeholder="*Your name here..."
-                required
-              />
+              <input class="scn-contacts-field__input" type="text" name="fullName" placeholder="*Your name here..." required />
             </div>
 
             <!-- phone -->
             <div class="scn-contacts-field">
               <label class="scn-contacts-field__label">Full Name</label>
-              <input
-                class="scn-contacts-field__input"
-                type="tel"
-                name="phone"
-                placeholder="*Your phone here..."
-                required
-              />
+              <input class="scn-contacts-field__input" type="tel" name="phone" placeholder="*Your phone here..." required />
             </div>
 
             <!-- email -->
             <div class="scn-contacts-field">
               <label class="scn-contacts-field__label">Email</label>
-              <input
-                class="scn-contacts-field__input"
-                type="email"
-                name="email"
-                placeholder="*Your email here..."
-                required
-              />
+              <input class="scn-contacts-field__input" type="email" name="email" placeholder="*Your email here..." required />
             </div>
 
             <!-- email -->
             <div class="scn-contacts-field">
               <label class="scn-contacts-field__label">Message</label>
-              <textarea
-                class="scn-contacts-field__textarea"
-                name="message"
-                placeholder="*Enter message here..."
-                row="1"
-                required
-              ></textarea>
+              <textarea class="scn-contacts-field__textarea" name="message" placeholder="*Enter message here..." row="1" required></textarea>
             </div>
 
             <div class="scn-contacts-form__footer">
