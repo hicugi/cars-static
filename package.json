@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel start:html start:styles",
-    "start:html": "browser-sync start --server src --no-open --no-notify --no-ui --cwd src --files *.html,assets/**/*",
+    "start:html": "browser-sync start --server src --no-open --no-notify --no-ui --cwd src --files *.html,assets/**/*,mainassets/**/*",
     "start:styles": "npm-run-all styles:start styles:watcher",
     "styles:start": "node-sass ./src/scss -o ./src/assets/css --output-style compressed",
     "styles:watcher": "node-sass ./src/scss -wr -o ./src/assets/css --output-style compressed",

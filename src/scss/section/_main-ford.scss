@@ -1,9 +1,0 @@
-@import "../_variables.scss";
-
-.scn-main {
-  padding-top: 64px;
-
-  @media (min-width: $breakpoint-tablet) {
-    padding-top: 166px;
-  }
-}

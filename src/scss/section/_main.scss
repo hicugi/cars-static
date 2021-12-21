@@ -82,7 +82,7 @@
       &::before {
         width: $width;
         height: $height;
-        background-image: url("/assets/img/#{$file}");
+        background-image: url("/mainassets/images/main-section-texas-#{$file}");
       }
     }
   }

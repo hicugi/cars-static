@@ -15,20 +15,26 @@
         <div class="scn-main-bg">
           <div
             class="scn-main-bg__sm"
-            style="background-image: url('/assets/img/ford/main-bg-sm.jpeg')"
+            style="
+              background-image: url('/mainassets/images/ford-commercial-solutions/main-bg-sm.jpeg');
+            "
           ></div>
           <div
             class="scn-main-bg__lg"
-            style="background-image: url('/assets/img/ford/main-bg.jpeg')"
+            style="
+              background-image: url('/mainassets/images/ford-commercial-solutions/main-bg.jpeg');
+            "
           ></div>
         </div>
 
         <div class="container">
           <picture
-            ><source srcset="/assets/img/ford/logo.webp" type="image/webp" />
+            ><source
+              srcset="/mainassets/images/ford-commercial-solutions/logo.webp"
+              type="image/webp" />
             <img
               class="scn-main__logo"
-              src="/assets/img/ford/logo.png"
+              src="/mainassets/images/ford-commercial-solutions/logo.png"
               alt="Chevrolet logo"
               type="image/png"
           /></picture>
@@ -79,7 +85,7 @@
                 <div class="scn-offer-list__image">
                   <span
                     data-image
-                    style="background-image:url('/assets/img/ford-offer/{{ image }}.jpg');"
+                    style="background-image:url('/mainassets/images/ford-commercial-solutions/offer/{{ image }}.jpg');"
                   ></span>
                 </div>
               </div>
@@ -151,10 +157,8 @@
               elm.innerHTML = content;
 
               const { imagePosition } = item;
-              console.log(imagePosition);
               if (imagePosition) {
                 const imageElm = elm.querySelector("[data-image]");
-                console.log(imageElm);
                 if (imageElm) {
                   imageElm.style.backgroundPosition = imagePosition;
                 }

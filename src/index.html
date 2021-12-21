@@ -15,22 +15,28 @@
         <div class="scn-main-bg">
           <div
             class="scn-main-bg__sm"
-            style="background-image: url('/assets/img/main-bg-sm.jpeg')"
+            style="
+              background-image: url('/mainassets/images/chevrolet-commercial-fleet/main-bg-sm.jpeg');
+            "
           ></div>
           <div
             class="scn-main-bg__lg"
-            style="background-image: url('/assets/img/main-bg.jpeg')"
+            style="
+              background-image: url('/mainassets/images/chevrolet-commercial-fleet/main-bg.jpeg');
+            "
           ></div>
         </div>
 
         <div class="container">
           <picture
             ><source
-              srcset="/assets/img/chevrolet-logo.webp"
+              srcset="
+                /mainassets/images/chevrolet-commercial-fleet/chevrolet-logo.webp
+              "
               type="image/webp" />
             <img
               class="scn-main__logo"
-              src="/assets/img/chevrolet-logo.png"
+              src="/mainassets/images/chevrolet-commercial-fleet/chevrolet-logo.png"
               alt="Chevrolet logo"
               type="image/png"
           /></picture>
@@ -48,10 +54,14 @@
             <div class="scn-about-row__col scn-about-row__col_image">
               <div class="scn-about-image">
                 <picture
-                  ><source srcset="/assets/img/about.webp" type="image/webp" />
+                  ><source
+                    srcset="
+                      /mainassets/images/chevrolet-commercial-fleet/about.webp
+                    "
+                    type="image/webp" />
                   <img
                     class="scn-about-image__img"
-                    src="/assets/img/about.jpeg"
+                    src="/mainassets/images/chevrolet-commercial-fleet/about.jpeg"
                     alt="About Chevrolet Commercial"
                     type="image/jpeg"
                 /></picture>
@@ -104,6 +114,30 @@
           </header>
 
           <ul id="productList" class="scn-products-list"></ul>
+          <script>
+            var productListItems = [
+              {
+                title: "Chevrolet Colorado",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/product/colorado.jpeg",
+              },
+              {
+                title: "Chevrolet Silverado 1500",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/product/silverado-1500.jpeg",
+              },
+              {
+                title: "Chevrolet Silverado 2500 HD",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/product/silverado-2500hd.jpeg",
+              },
+              {
+                title: "Chevrolet Silverado 3500 HD",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/product/silverado-3500hd.jpeg",
+              },
+            ];
+          </script>
 
           <header class="scn-products__header">
             <h3 class="scn-products__title">Chevrolet vans</h3>
@@ -112,6 +146,30 @@
             >
           </header>
           <ul id="productListCans" class="scn-products-list"></ul>
+          <script>
+            var productListCansItems = [
+              {
+                title: "Chevrolet Low \nCab Forward 4500",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-low-cab-forward-4500.jpeg",
+              },
+              {
+                title: "Chevrolet City Express \nCargo Van",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-city-express.jpeg",
+              },
+              {
+                title: "Chevrolet Express \nCargo Van",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-express.jpeg",
+              },
+              {
+                title: "Chevrolet Express \nCommercial Cutaway",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-express-commercial-cutaway.jpeg",
+              },
+            ];
+          </script>
         </div>
       </section>
 
@@ -136,6 +194,31 @@
       <section class="scn-service">
         <div class="container">
           <ul id="services" class="scn-service-list"></ul>
+          <script>
+            var serviceItems = [
+              {
+                title: "Payne is Your \nBusiness Elite Dealer",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/service/dealer.jpeg",
+                description:
+                  "Payne Chevrolet is a Business Elite Dealer, which means we provide a range of services to help your business running smoothly. These include a dedicated dealer representative, extended service hours, and loaner vehicles. Your dealer representative will work with you to determine & become familiar with your personal business needs, and they’ll help you select the right vehicle for the jobs you need completed.",
+              },
+              {
+                title: "Group & Association Incentives",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/service/group.jpeg",
+                description:
+                  "Chevrolet strives to give back to those who partner with us, which is why they offer special business association offers. If you are a member of the National Association of Home Builders, Associated Builder and Contractors, Inc. , or The Associated General Contractors of America, you can qualify for special offers & discounts when you buy an eligible Chevrolet for your business. If you’re ready to invest in a vehicle that will help your business, come to Henna Chevrolet to find the perfect Commercial vehicle or explore our Commercial Inventory online! If you have any additional questions regarding Commercial vehicles, contact our Chevy Commercial sales specialists today.",
+              },
+              {
+                title: "Upfit & Accessory \nAssistance",
+                image:
+                  "/mainassets/images/chevrolet-commercial-fleet/service/accessory.jpeg",
+                description:
+                  "Depending on your individual business needs, you may need custom Upfit & accessories for your commercial vehicle. These will allow you to tailor a commercial vehicle perfectly to your business. Chevrolet also has Business Choice Offers, which are cash allowances on Upfits or Accessories for Commercial vehicles! In order to take advantage of these specials, you must use the vehicle for day-to-day operations, not just transportation.",
+              },
+            ];
+          </script>
         </div>
       </section>
     </main>
