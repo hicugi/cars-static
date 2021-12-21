@@ -62,29 +62,25 @@
     }
     &__title {
       margin: 0 0 16px;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 700;
-      line-height: 2em;
+      line-height: 1.5em;
       text-align: center;
 
-      // TODO: modified styles for product title
-      font-size: 26px;
-      line-height: 1.5em;
+      @media screen and (min-width: 1280px) {
+        font-size: 24px;
+      }
     }
 
     &__link {
       display: block;
       color: $color-primary;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 600;
-      line-height: 2em;
+      line-height: 1.2em;
       text-align: center;
       text-transform: uppercase;
       text-decoration: none;
-
-      // TODO: modified styles for product link
-      font-size: 20px;
-      line-height: 1.2em;
 
       &:hover {
         color: $color-primary;
