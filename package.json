@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel start:html start:styles",
-    "start:html": "browser-sync start --server src --no-notify --no-ui --cwd src --files *.html,assets/**/*",
+    "start:html": "browser-sync start --server src --no-open --no-notify --no-ui --cwd src --files *.html,assets/**/*",
     "start:styles": "node-sass ./src/scss -wr -o ./src/assets/css --output-style compressed",
     "test": "editorconfig-checker",
     "build:clear": "rm -rf ./dist",
