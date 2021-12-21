@@ -5,14 +5,14 @@
   position: relative;
   padding-top: 48px;
   padding-bottom: 48px;
-  background: url(/mainassets/images/contacts-bg-sm.jpg) no-repeat center;
+  background: url(/../mainassets/images/contacts-bg-sm.jpg) no-repeat center;
   background-size: cover;
   color: #ffffff;
 
   @media (min-width: $breakpoint-tablet) {
     padding-top: 52px;
     padding-bottom: 72px;
-    background-image: url(/mainassets/images/contacts-bg.jpg);
+    background-image: url(/../mainassets/images/contacts-bg.jpg);
   }
 
   &::before {
