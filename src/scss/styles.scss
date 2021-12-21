@@ -21,29 +21,3 @@ body {
     padding-top: 62px;
   }
 }
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $container-padding-inner;
-  padding-right: $container-padding-inner;
-  max-width: $container-width;
-}
-.btn {
-  display: inline-block;
-  border: none;
-
-  &_size-large {
-    padding: 17px 20px 18px;
-    width: 100%;
-    max-width: 370px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29px;
-    text-transform: uppercase;
-  }
-  &_variant-primary {
-    background-color: $color-primary;
-    color: #ffffff;
-  }
-}

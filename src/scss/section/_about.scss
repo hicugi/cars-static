@@ -36,6 +36,21 @@
     }
   }
 
+  &__btn {
+    padding: 17px 20px 18px;
+    border: none;
+    width: 100%;
+    max-width: 370px;
+    display: inline-block;
+    background-color: $color-primary;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    text-transform: uppercase;
+    font-family: inherit;
+  }
+
   @media (max-width: #{$breakpoint-tablet - 0.002}) {
     &__btn {
       width: 100%;

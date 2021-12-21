@@ -12,7 +12,7 @@
     "test": "editorconfig-checker",
     "build:clear": "rm -rf ./dist",
     "build:html": "html-minifier --remove-comments --collapse-whitespace --input-dir src --output-dir dist --file-ext html",
-    "build:files": "cp -R ./src/assets ./dist/assets",
+    "build:files": "cp -R ./src/assets ./dist/assets && cp -R ./src/mainassets ./dist/mainassets",
     "build": "npm-run-all build:clear build:html build:files",
     "deploy": "cd dist && rsync --archive --compress --delete . mag@webmaho.com:/var/www/chevrolet.webmaho.com/public_html"
   },

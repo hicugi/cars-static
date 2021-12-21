@@ -1,4 +1,6 @@
 @import "./variables.scss";
+@import "./_pre-styles.scss";
+
 @import "./section/_main.scss";
 .scn-main {
   padding-top: 64px;
