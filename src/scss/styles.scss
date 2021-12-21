@@ -27,7 +27,7 @@ body {
   margin-right: auto;
   padding-left: $container-padding-inner;
   padding-right: $container-padding-inner;
-  max-width: 1568px;
+  max-width: $container-width;
 }
 .btn {
   display: inline-block;

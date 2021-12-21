@@ -64,6 +64,107 @@
           </div>
         </div>
       </section>
+
+      <section class="scn-offer">
+        <div class="container">
+          <h2 class="scn-offer__title">WHAT WE OFFER</h2>
+
+          <ul class="scn-offer-list" id="scnOfferList"></ul>
+
+          <template id="scnOfferItemTemplate">
+            <li class="scn-offer-list-item">
+              <div
+                class="scn-offer-list-item__col scn-offer-list-item__col_image"
+              >
+                <div class="scn-offer-list__image">
+                  <span
+                    data-image
+                    style="background-image:url('/assets/img/ford-offer/{{ image }}.jpg');"
+                  ></span>
+                </div>
+              </div>
+
+              <div
+                class="scn-offer-list-item__col scn-offer-list-item__col_info"
+              >
+                <div class="scn-offer-list__info">
+                  <h4 class="scn-offer-list__title">{{ title }}</h4>
+                  <p class="scn-offer-list__description">{{ description }}</p>
+                  <button class="scn-offer-list__btn">{{ btnText }}</button>
+                </div>
+              </div>
+            </li>
+          </template>
+          <script>
+            const elmList = document.querySelector("#scnOfferList");
+            const template = document.querySelector(
+              "#scnOfferItemTemplate"
+            ).content;
+
+            [
+              {
+                title: "FORD TELEMATICS™",
+                description:
+                  "Ford Telematics™ is a web application that gives you a real-time window into your fleet operations.",
+                btnText: "EXPLORE FORD TELEMATICS",
+                image: "telematics",
+                imagePosition: "left center",
+              },
+              {
+                title: "COMPLIMENTARY FORD TELEMATICS ESSENTIALS",
+                description:
+                  "Receive complimentary access to Vehicle Health data for Ford vehicles with an embedded modem, including odometer reading, malfunction and warning lights related to diagnostic trouble codes and information about oil life, engine hours and recalls.",
+                btnText: "EXPLORE FORD TELEMATICS ESSENTIALS",
+                image: "telematics-essential",
+              },
+              {
+                title: "FORD DATA SERVICES™",
+                description:
+                  "Ford Data Services™ is the link between your vehicle data and your business system or service provider. It's robust, secure and designed to work with your chosen systems and providers.",
+                btnText: "EXPLORE FORD DATA SERVICES",
+                image: "data-services",
+              },
+              {
+                title: "WEX FUEL CARDS",
+                description:
+                  "WEX Fuel Cards let you keep track of your fleet fuel expenses in real-time as well as a range of other benefits.",
+                btnText: "EXPLORE WEX FUEL CARDS",
+                image: "wex-fuel-cards",
+              },
+              {
+                title: "VEHICLE HARDWARE",
+                description:
+                  "New Ford vehicles come with an embedded modem that works seamlessly with our solutions to provide rich telematics data. \nWhich means you won't need to spend time and money purchasing or installing additional hardware. Plug-in devices are available for Ford vehicles without a modem and for non-Ford vehicles. \nSo you can still get the benefits of using Ford Telematics.",
+                btnText: "EXPLORE VEHICLE HARDWARE",
+                image: "vehicle-hardware",
+              },
+            ].forEach((item, index) => {
+              const elm = template.cloneNode(true).querySelector("*");
+
+              let content = elm.innerHTML;
+
+              Object.entries(item).forEach(([key, value]) => {
+                const rgx = new RegExp(`{{\\s*${key}\\s*}}`, "g");
+                content = content.replace(rgx, value);
+              });
+
+              elm.innerHTML = content;
+
+              const { imagePosition } = item;
+              console.log(imagePosition);
+              if (imagePosition) {
+                const imageElm = elm.querySelector("[data-image]");
+                console.log(imageElm);
+                if (imageElm) {
+                  imageElm.style.backgroundPosition = imagePosition;
+                }
+              }
+
+              elmList.appendChild(elm);
+            });
+          </script>
+        </div>
+      </section>
     </main>
   </body>
 </html>
