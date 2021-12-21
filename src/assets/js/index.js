@@ -1,3 +1,5 @@
+const searchLink = "/inventory?limit=21&offset=0&criteria%5Bcond%5D=";
+
 const getImage = (title, image) => {
   const elmImage = document.createElement("DIV");
   elmImage.style.backgroundImage = `url('${image}')`;
@@ -13,10 +15,9 @@ const getImage = (title, image) => {
 // products
 (() => {
   const insertPorudcts = (parent, items) => {
-    const setClass = (elm, value) =>
-      (elm.className = [parent.className, value].join(""));
+    const setClass = (elm, value) => (elm.className = [parent.className, value].join(""));
 
-    items.forEach(({ title, image }) => {
+    items.forEach(({ title, image, link }) => {
       const elmItem = document.createElement("LI");
       setClass(elmItem, "__item");
 
@@ -31,7 +32,7 @@ const getImage = (title, image) => {
 
       const elmLink = document.createElement("A");
       setClass(elmLink, "__link");
-      elmLink.href = "#learn-more";
+      elmLink.href = [searchLink, link].join("");
       elmLink.innerText = "Learn more";
       elmItem.appendChild(elmLink);
 
@@ -49,8 +50,7 @@ const getImage = (title, image) => {
 // services
 (() => {
   const parent = document.querySelector("#services");
-  const setClass = (elm, value) =>
-    (elm.className = [parent.className, value].join(""));
+  const setClass = (elm, value) => (elm.className = [parent.className, value].join(""));
 
   serviceItems.forEach(({ title, image, description }) => {
     const elmItem = document.createElement("LI");

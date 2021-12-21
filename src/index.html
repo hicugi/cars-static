@@ -68,53 +68,60 @@
         <div class="container">
           <header class="scn-products__header">
             <h3 class="scn-products__title">Chevrolet trucks</h3>
-            <a class="scn-products__show-more-link" href="#view-all">View All Trucks</a>
+            <a class="scn-products__show-more-link" href="/inventory?limit=21&offset=0&criteria%5Bcond%5D=Chevrolet+trucks">View All Trucks</a>
           </header>
 
           <ul id="productList" class="scn-products-list"></ul>
+
+          <header class="scn-products__header">
+            <h3 class="scn-products__title">Chevrolet vans</h3>
+            <a class="scn-products__show-more-link" href="/inventory?limit=21&offset=0&criteria%5Bcond%5D=Chevrolet+vans">View All Trucks</a>
+          </header>
+          <ul id="productListCans" class="scn-products-list"></ul>
+
           <script>
             var productListItems = [
               {
                 title: "Chevrolet Colorado",
                 image: "/mainassets/images/chevrolet-commercial-fleet/product/colorado.jpeg",
+                link: "Chevrolet+Colorado",
               },
               {
                 title: "Chevrolet Silverado 1500",
                 image: "/mainassets/images/chevrolet-commercial-fleet/product/silverado-1500.jpeg",
+                link: "Chevrolet+Silverado+1500",
               },
               {
                 title: "Chevrolet Silverado 2500 HD",
                 image: "/mainassets/images/chevrolet-commercial-fleet/product/silverado-2500hd.jpeg",
+                link: "Chevrolet+Silverado+2500+HD",
               },
               {
                 title: "Chevrolet Silverado 3500 HD",
                 image: "/mainassets/images/chevrolet-commercial-fleet/product/silverado-3500hd.jpeg",
+                link: "Chevrolet+Silverado+3500+HD",
               },
             ];
-          </script>
-
-          <header class="scn-products__header">
-            <h3 class="scn-products__title">Chevrolet vans</h3>
-            <a class="scn-products__show-more-link" href="#view-all">View All Trucks</a>
-          </header>
-          <ul id="productListCans" class="scn-products-list"></ul>
-          <script>
             var productListCansItems = [
               {
                 title: "Chevrolet Low \nCab Forward 4500",
                 image: "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-low-cab-forward-4500.jpeg",
+                link: "Chevrolet-Low-Cab-Forward-4500",
               },
               {
                 title: "Chevrolet City Express \nCargo Van",
                 image: "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-city-express.jpeg",
+                link: "Chevrolet+City+Express+Cargo+Van",
               },
               {
                 title: "Chevrolet Express \nCargo Van",
                 image: "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-express.jpeg",
+                link: "Chevrolet+Express+Cargo+Van",
               },
               {
                 title: "Chevrolet Express \nCommercial Cutaway",
                 image: "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-express-commercial-cutaway.jpeg",
+                link: "Chevrolet+Express+Commercial+Cutaway",
               },
             ];
           </script>

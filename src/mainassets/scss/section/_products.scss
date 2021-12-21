@@ -25,6 +25,7 @@
     text-transform: uppercase;
 
     &:hover {
+      color: $color-primary;
       text-decoration: underline;
     }
   }
@@ -86,6 +87,7 @@
       line-height: 1.2em;
 
       &:hover {
+        color: $color-primary;
         text-decoration: underline;
       }
 
