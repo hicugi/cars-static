@@ -152,10 +152,23 @@ $breakpoint-inline: 1180px;
       border: none;
       background-color: $color-primary;
       color: #ffffff;
+      font-family: inherit;
       font-size: 18px;
       font-weight: 700;
       line-height: 22px;
+      text-align: center;
+      text-decoration: none;
       text-transform: uppercase;
+      cursor: pointer;
+      transition: ease 0.3s;
+      transition-property: background-color;
+      will-change: background-color;
+
+      &:hover {
+        background-color: #b61529;
+        color: #ffffff;
+        text-decoration: none;
+      }
 
       @include breakpointInlineMax() {
         width: 100%;
