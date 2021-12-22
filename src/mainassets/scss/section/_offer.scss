@@ -184,6 +184,9 @@ $breakpoint-inline: 1180px;
         text-decoration: none;
       }
 
+      @media screen and (max-width: 480px) {
+        white-space: pre-wrap;
+      }
       @include breakpointInlineMax() {
         width: 100%;
         height: 64px;
