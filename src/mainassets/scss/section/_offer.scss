@@ -95,39 +95,53 @@ $breakpoint-inline: 1180px;
 
     &__image {
       position: relative;
-      height: 529px;
-
-      @include breakpointInlineMax() {
-        margin-bottom: 24px;
-      }
 
       span {
-        position: absolute;
-        width: 100%;
-        max-width: 1077px;
-        height: 100%;
+        display: block;
         background: no-repeat center;
-        background-size: auto 100%;
+        background-size: cover;
+      }
 
-        @include breakpointInlineMax() {
-          left: 50%;
-          transform: translateX(-50%);
-          width: calc(100% + #{$container-padding-inner} * 2);
+      @include breakpointInlineMax() {
+        margin: 0 #{-$container-padding-inner} 24px;
+
+        span::before {
+          padding-top: calc(100% / 203.59168 * 100);
+          display: block;
+          content: "";
         }
-        @media (min-width: 1180px) {
-          width: calc(100vw - 636px);
-        }
-        @media (min-width: #{$container-width}) {
-          width: calc((100vw - #{$container-width}) / 2 + 917px);
-        }
-        @media (min-width: $breakpoint-laptop-large) {
-          width: calc((100vw - #{$container-width}) / 2 + 917px);
+      }
+      @include breakpointInlineMin() {
+        height: 529px;
+
+        span {
+          position: absolute;
+          width: 100%;
+          max-width: 1077px;
+          height: 100%;
+          background: no-repeat center;
+          background-size: auto 100%;
+
+          @media (min-width: 1180px) {
+            width: calc(100vw - 636px);
+          }
+          @media (min-width: #{$container-width}) {
+            width: calc((100vw - #{$container-width}) / 2 + 917px);
+          }
+          @media (min-width: $breakpoint-laptop-large) {
+            width: calc((100vw - #{$container-width}) / 2 + 917px);
+          }
         }
       }
     }
 
     &__info {
       max-width: 566px;
+
+      @include breakpointInlineMax() {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     &__title {
       margin: 0 0 16px;
