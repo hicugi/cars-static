@@ -74,6 +74,24 @@
       justify-content: center;
     }
   }
+
+  @mixin formControlStyles() {
+    padding: 15px;
+    border: 1px solid #ffffff;
+    box-shadow: none;
+    width: 100%;
+    display: block;
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 22px;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.38);
+    }
+  }
+
   &-field {
     & + & {
       margin-top: 24px;
@@ -86,22 +104,10 @@
       font-weight: 400;
       line-height: 22px;
     }
+
     &__input,
     &__textarea {
-      padding: 15px;
-      border: 1px solid #ffffff;
-      box-shadow: none;
-      width: 100%;
-      display: block;
-      background: none;
-      color: inherit;
-      font-family: inherit;
-      font-size: 18px;
-      line-height: 22px;
-
-      &::placeholder {
-        color: rgba(255, 255, 255, 0.38);
-      }
+      @include formControlStyles;
     }
     &__textarea {
       min-width: 100%;
@@ -111,6 +117,24 @@
     }
   }
 
+  // custom styles for custom form
+  .form {
+    &-group {
+      margin-bottom: 24px;
+    }
+    &-control {
+      @include formControlStyles;
+    }
+  }
+  .captcha-box {
+    display: flex;
+    justify-content: center;
+  }
+  form > *:last-child {
+    text-align: center;
+  }
+
+  .btn-primary,
   &__btn {
     padding: 18px 78px 17px;
     border: none;
@@ -121,6 +145,18 @@
     font-size: 24px;
     font-weight: 700;
     line-height: 29px;
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: ease 0.3s;
+    transition-property: background-color;
+    will-change: background-color;
+
+    &:hover {
+      background-color: #b61529;
+      color: #ffffff;
+      text-decoration: none;
+    }
   }
 }
