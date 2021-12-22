@@ -6,8 +6,16 @@
   background-color: #f4f7fa;
   color: $color-default;
 
+  &__under-title {
+    margin: 0 0 12px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    text-align: center;
+    text-transform: uppercase;
+  }
   &__title {
-    margin: 0 0 16px;
+    margin: 0;
     font-size: 36px;
     font-weight: 700;
     line-height: 44px;
@@ -15,7 +23,7 @@
     text-transform: uppercase;
   }
   &__description {
-    margin: 0 auto;
+    margin: 16px auto 0;
     max-width: 1122px;
     font-size: 18px;
     font-weight: 400;
@@ -31,12 +39,16 @@
     padding-top: 64px;
     padding-bottom: 64px;
 
+    &__under-title {
+      font-size: 36px;
+      line-height: 44px;
+    }
     &__title {
-      margin-bottom: 24px;
       font-size: 60px;
       line-height: 73px;
     }
     &__description {
+      margin-top: 24px;
       font-size: 20px;
       line-height: 30px;
     }

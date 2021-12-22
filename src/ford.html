@@ -8,6 +8,7 @@
     <title>Chevrolet Commercial Fleet</title>
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/ford-commercial-solutions.css" />
+    <script src="/assets/js/template.js"></script>
   </head>
   <body>
     <main>
@@ -52,7 +53,7 @@
 
           <ul class="scn-offer-list" id="scnOfferList"></ul>
 
-          <template id="scnOfferItemTemplate">
+          <template id="scnOfferListTemplate">
             <li class="scn-offer-list-item">
               <div class="scn-offer-list-item__col scn-offer-list-item__col_image">
                 <div class="scn-offer-list__image">
@@ -70,10 +71,7 @@
             </li>
           </template>
           <script>
-            const elmList = document.querySelector("#scnOfferList");
-            const template = document.querySelector("#scnOfferItemTemplate").content;
-
-            [
+            const items = [
               {
                 title: "FORD TELEMATICS™",
                 description: "Ford Telematics™ is a web application that gives you a real-time window into your fleet operations.",
@@ -108,27 +106,16 @@
                 btnText: "EXPLORE VEHICLE HARDWARE",
                 image: "vehicle-hardware",
               },
-            ].forEach((item, index) => {
-              const elm = template.cloneNode(true).querySelector("*");
-
-              let content = elm.innerHTML;
-
-              Object.entries(item).forEach(([key, value]) => {
-                const rgx = new RegExp(`{{\\s*${key}\\s*}}`, "g");
-                content = content.replace(rgx, value);
-              });
-
-              elm.innerHTML = content;
-
+            ];
+            templateMount("scnOfferList", items, (elm, item) => {
               const { imagePosition } = item;
-              if (imagePosition) {
-                const imageElm = elm.querySelector("[data-image]");
-                if (imageElm) {
-                  imageElm.style.backgroundPosition = imagePosition;
-                }
-              }
+              if (!imagePosition) return;
 
-              elmList.appendChild(elm);
+              const imageElm = elm.querySelector("[data-image]");
+              console.log(elm);
+              if (!imageElm) return;
+
+              imageElm.style.backgroundPosition = imagePosition;
             });
           </script>
         </div>
