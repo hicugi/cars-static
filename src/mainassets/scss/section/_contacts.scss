@@ -136,7 +136,7 @@
 
   .btn-primary,
   &__btn {
-    padding: 18px 78px 17px;
+    padding: 18px 18px 17px;
     border: none;
     background: $color-primary;
     box-shadow: none;
@@ -157,6 +157,14 @@
       background-color: #b61529;
       color: #ffffff;
       text-decoration: none;
+    }
+    @media (max-width: #{$breakpoint-tablet - 0.002}) {
+      width: 100%;
+      display: block;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      padding-left: 78px;
+      padding-right: 78px;
     }
   }
 }
