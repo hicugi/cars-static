@@ -1,5 +1,17 @@
 @import "./_variables.scss";
-@import "./_fonts.scss";
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/css/fonts/ProximaNova-Regular.woff2) format("woff2"), url(/assets/css/fonts/ProximaNova-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "ProximaNova";
+  font-style: bold;
+  font-weight: 700;
+  src: url(/assets/css/fonts/ProximaNova-Bold.woff2) format("woff2"), url(/assets/css/fonts/ProximaNova-Bold.woff) format("woff");
+}
 
 *,
 *::before,

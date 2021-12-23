@@ -1,0 +1,16 @@
+@import "../_variables.scss";
+@import "../presets/_container.scss";
+
+@import "../section/_main.scss";
+.scn-main {
+  padding-top: 120px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 138px;
+  }
+}
+
+@import "../section/_about.scss";
+@import "../section/_products.scss";
+@import "../section/_business.scss";
+@import "../section/_service.scss";

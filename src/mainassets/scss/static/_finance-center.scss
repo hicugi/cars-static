@@ -1,0 +1,14 @@
+@import "../_variables.scss";
+@import "../presets/_container.scss";
+
+@import "../section/_main.scss";
+.scn-main {
+  padding-top: 110px;
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 213px;
+  }
+}
+
+@import "../section/_business.scss";
+@import "../section/_cardlist.scss";
+@import "../section/_contacts.scss";

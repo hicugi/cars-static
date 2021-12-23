@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trucks & vans for sale" />
+    <title>Chevrolet Commercial Fleet</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/chevrolet-commercial-fleet.css" />
+  </head>
+  <body>
+    <main>
+      <section class="scn-main">
+        <div class="scn-main-bg">
+          <div class="scn-main-bg__sm" style="background-image: url('/mainassets/images/chevrolet-commercial-fleet/main-bg-sm.jpeg')"></div>
+          <div class="scn-main-bg__lg" style="background-image: url('/mainassets/images/chevrolet-commercial-fleet/main-bg.jpeg')"></div>
+        </div>
+
+        <div class="container">
+          <picture
+            ><source srcset="/mainassets/images/chevrolet-commercial-fleet/chevrolet-logo.webp" type="image/webp" />
+            <img class="scn-main__logo" src="/mainassets/images/chevrolet-commercial-fleet/chevrolet-logo.png" alt="Chevrolet logo" type="image/png"
+          /></picture>
+
+          <h1 class="scn-main__under-title">Chevrolet commercial</h1>
+          <p class="scn-main__title">trucks & vans for sale</p>
+          <p class="scn-main__flag"><span>In Weslaco, TX</span></p>
+        </div>
+      </section>
+
+      <section class="scn-about">
+        <div class="container">
+          <div class="scn-about-row">
+            <!-- image -->
+            <div class="scn-about-row__col scn-about-row__col_image">
+              <div class="scn-about-image">
+                <picture
+                  ><source srcset="/mainassets/images/chevrolet-commercial-fleet/about.webp" type="image/webp" />
+                  <img class="scn-about-image__img" src="/mainassets/images/chevrolet-commercial-fleet/about.jpeg" alt="About Chevrolet Commercial" type="image/jpeg"
+                /></picture>
+              </div>
+            </div>
+
+            <!-- info -->
+            <div class="scn-about-row__col scn-about-row__col_info">
+              <div class="scn-about__info">
+                <h2 class="scn-about__title">More about Chevrolet Commercial</h2>
+                <div class="scn-about__description">
+                  <p>
+                    When you are searching for a new commercial truck or van for your business near San Antonio or Pflugerville, TX, turn to the Chevrolet commercial vehicle lineup
+                    available at Henna Chevrolet. With a strong selection of work-ready and heavy-duty commercial vehicles from Chevrolet, our dealership in Austin, TX should be
+                    your dedicated source when shopping for a heavy-duty Chevrolet pickup truck or a commercial van for your business or work needs.
+                  </p>
+                  <p>
+                    <strong>We offer both commercial Chevrolet trucks for lease and for sale</strong>
+                  </p>
+                </div>
+
+                <a class="scn-about__btn" href="/contact-ed-payne-chrysler-dodge-jeep-ram-in-weslaco-tx">Visit us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="scn-products">
+        <div class="container">
+          <header class="scn-products__header">
+            <h3 class="scn-products__title">Chevrolet trucks</h3>
+            <a class="scn-products__show-more-link" href="/inventory?limit=21&offset=0&criteria%5Bcond%5D=Chevrolet+trucks">View All Trucks</a>
+          </header>
+
+          <ul id="productList" class="scn-products-list"></ul>
+
+          <header class="scn-products__header">
+            <h3 class="scn-products__title">Chevrolet vans</h3>
+            <a class="scn-products__show-more-link" href="/inventory?limit=21&offset=0&criteria%5Bcond%5D=Chevrolet+vans">View All Trucks</a>
+          </header>
+          <ul id="productListCans" class="scn-products-list"></ul>
+
+          <script>
+            var productListItems = [
+              {
+                title: "Chevrolet Colorado",
+                image: "/mainassets/images/chevrolet-commercial-fleet/product/colorado.jpeg",
+                link: "Chevrolet+Colorado",
+              },
+              {
+                title: "Chevrolet Silverado 1500",
+                image: "/mainassets/images/chevrolet-commercial-fleet/product/silverado-1500.jpeg",
+                link: "Chevrolet+Silverado+1500",
+              },
+              {
+                title: "Chevrolet Silverado 2500 HD",
+                image: "/mainassets/images/chevrolet-commercial-fleet/product/silverado-2500hd.jpeg",
+                link: "Chevrolet+Silverado+2500+HD",
+              },
+              {
+                title: "Chevrolet Silverado 3500 HD",
+                image: "/mainassets/images/chevrolet-commercial-fleet/product/silverado-3500hd.jpeg",
+                link: "Chevrolet+Silverado+3500+HD",
+              },
+            ];
+            var productListCansItems = [
+              {
+                title: "Chevrolet Low \nCab Forward 4500",
+                image: "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-low-cab-forward-4500.jpeg",
+                link: "Chevrolet-Low-Cab-Forward-4500",
+              },
+              {
+                title: "Chevrolet City Express \nCargo Van",
+                image: "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-city-express.jpeg",
+                link: "Chevrolet+City+Express+Cargo+Van",
+              },
+              {
+                title: "Chevrolet Express \nCargo Van",
+                image: "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-express.jpeg",
+                link: "Chevrolet+Express+Cargo+Van",
+              },
+              {
+                title: "Chevrolet Express \nCommercial Cutaway",
+                image: "/mainassets/images/chevrolet-commercial-fleet/product/cargo-van-express-commercial-cutaway.jpeg",
+                link: "Chevrolet+Express+Commercial+Cutaway",
+              },
+            ];
+          </script>
+        </div>
+      </section>
+
+      <section class="scn-business">
+        <div class="container">
+          <h2 class="scn-business__title">Chevrolet commercial vehicles <br />mean business</h2>
+          <div class="scn-business__description">
+            <p>
+              Whenever you have a tough job on your hands, you can always count on Chevrolet Commercial vehicles to deliver! Chevrolet has been helping companies accomplish their
+              project goals for over 100 years, and with the most comprehensive commercial vehicle lineup, you’ll easily find the perfect truck, van, or SUV to get any job done
+              right.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scn-service">
+        <div class="container">
+          <ul id="services" class="scn-service-list"></ul>
+          <script>
+            var serviceItems = [
+              {
+                title: "Payne is Your \nBusiness Elite Dealer",
+                image: "/mainassets/images/chevrolet-commercial-fleet/service/dealer.jpeg",
+                description:
+                  "Payne Chevrolet is a Business Elite Dealer, which means we provide a range of services to help your business running smoothly. These include a dedicated dealer representative, extended service hours, and loaner vehicles. Your dealer representative will work with you to determine & become familiar with your personal business needs, and they’ll help you select the right vehicle for the jobs you need completed.",
+              },
+              {
+                title: "Group & Association Incentives",
+                image: "/mainassets/images/chevrolet-commercial-fleet/service/group.jpeg",
+                description:
+                  "Chevrolet strives to give back to those who partner with us, which is why they offer special business association offers. If you are a member of the National Association of Home Builders, Associated Builder and Contractors, Inc. , or The Associated General Contractors of America, you can qualify for special offers & discounts when you buy an eligible Chevrolet for your business. If you’re ready to invest in a vehicle that will help your business, come to Henna Chevrolet to find the perfect Commercial vehicle or explore our Commercial Inventory online! If you have any additional questions regarding Commercial vehicles, contact our Chevy Commercial sales specialists today.",
+              },
+              {
+                title: "Upfit & Accessory \nAssistance",
+                image: "/mainassets/images/chevrolet-commercial-fleet/service/accessory.jpeg",
+                description:
+                  "Depending on your individual business needs, you may need custom Upfit & accessories for your commercial vehicle. These will allow you to tailor a commercial vehicle perfectly to your business. Chevrolet also has Business Choice Offers, which are cash allowances on Upfits or Accessories for Commercial vehicles! In order to take advantage of these specials, you must use the vehicle for day-to-day operations, not just transportation.",
+              },
+            ];
+          </script>
+        </div>
+      </section>
+    </main>
+
+    <script src="/assets/js/index.js"></script>
+  </body>
+</html>
