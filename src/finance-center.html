@@ -90,12 +90,12 @@
           <template id="cardListTemplate">
             <li>
               <div class="scn-cardlist-card">
-                <div class="scn-cardlist-card__image" style="background-image:url('{{ image }}');">
-                  <img src="{{ image }}" alt="{{ title }}" />
+                <div class="scn-cardlist-card__image" style="background-image: url('[[ image ]]')">
+                  <img src="[[ image ]]" alt="[[ title ]]" />
                 </div>
 
-                <h4 class="scn-cardlist-card__title">{{ title }}</h4>
-                <div class="scn-cardlist-card__description">{{ description }}</div>
+                <h4 class="scn-cardlist-card__title">[[ title ]]</h4>
+                <div class="scn-cardlist-card__description">[[ description ]]</div>
 
                 <div class="scn-cardlist-card__footer">
                   <button class="scn-cardlist-card__btn">SCHEDULE NOW</button>
@@ -115,7 +115,7 @@
                 let content = elm.innerHTML;
 
                 Object.entries(item).forEach(([key, value]) => {
-                  const rgx = new RegExp(`{{\\s*${key}\\s*}}`, "g");
+                  const rgx = new RegExp(`\\[{2}\\s*${key}\\s*\\]{2}`, "g");
                   content = content.replace(rgx, value);
                 });
 
