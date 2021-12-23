@@ -5,12 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Trucks & vans for sale" />
-    <title>Chevrolet Commercial Fleet</title>
+    <title>Ford Commercial Solutions</title>
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/ford-commercial-solutions.css" />
     <script src="/assets/js/template.js"></script>
   </head>
   <body>
+    <script>
+      const offerListItems = [
+        {
+          title: "FORD TELEMATICS™",
+          description: "Ford Telematics™ is a web application that gives you a real-time window into your fleet operations.",
+          link: "#link",
+          btnText: "EXPLORE FORD TELEMATICS",
+          image: "/mainassets/images/ford-commercial-solutions/offer/telematics.jpg",
+          imagePosition: "left center",
+        },
+        {
+          title: "COMPLIMENTARY FORD TELEMATICS ESSENTIALS",
+          description:
+            "Receive complimentary access to Vehicle Health data for Ford vehicles with an embedded modem, including odometer reading, malfunction and warning lights related to diagnostic trouble codes and information about oil life, engine hours and recalls.",
+          link: "#link",
+          btnText: "EXPLORE FORD \nTELEMATICS ESSENTIALS",
+          image: "/mainassets/images/ford-commercial-solutions/offer/telematics-essential.jpg",
+        },
+        {
+          title: "FORD DATA SERVICES™",
+          description:
+            "Ford Data Services™ is the link between your vehicle data and your business system or service provider. It's robust, secure and designed to work with your chosen systems and providers.",
+          link: "#link",
+          btnText: "EXPLORE FORD DATA SERVICES",
+          image: "/mainassets/images/ford-commercial-solutions/offer/data-services.jpg",
+        },
+        {
+          title: "WEX FUEL CARDS",
+          description: "WEX Fuel Cards let you keep track of your fleet fuel expenses in real-time as well as a range of other benefits.",
+          link: "#link",
+          btnText: "EXPLORE WEX FUEL CARDS",
+          image: "/mainassets/images/ford-commercial-solutions/offer/wex-fuel-cards.jpg",
+        },
+        {
+          title: "VEHICLE HARDWARE",
+          description:
+            "New Ford vehicles come with an embedded modem that works seamlessly with our solutions to provide rich telematics data. \nWhich means you won't need to spend time and money purchasing or installing additional hardware. Plug-in devices are available for Ford vehicles without a modem and for non-Ford vehicles. \nSo you can still get the benefits of using Ford Telematics.",
+          link: "#link",
+          btnText: "EXPLORE VEHICLE HARDWARE",
+          image: "/mainassets/images/ford-commercial-solutions/offer/vehicle-hardware.jpg",
+        },
+      ];
+    </script>
+
     <main>
       <section class="scn-main">
         <div class="scn-main-bg">
@@ -57,65 +101,48 @@
             <li class="scn-offer-list-item">
               <div class="scn-offer-list-item__col scn-offer-list-item__col_image">
                 <div class="scn-offer-list__image">
-                  <span data-image style="background-image:url('/mainassets/images/ford-commercial-solutions/offer/{{ image }}.jpg');"></span>
+                  <span data-image style="background-image: url('[[ image ]]')"></span>
                 </div>
               </div>
 
               <div class="scn-offer-list-item__col scn-offer-list-item__col_info">
                 <div class="scn-offer-list__info">
-                  <h4 class="scn-offer-list__title">{{ title }}</h4>
-                  <p class="scn-offer-list__description">{{ description }}</p>
-                  <button class="scn-offer-list__btn">{{ btnText }}</button>
+                  <h4 class="scn-offer-list__title">[[ title ]]</h4>
+                  <p class="scn-offer-list__description">[[ description ]]</p>
+                  <a class="scn-offer-list__btn" href="[[ link ]]">[[ btnText ]]</a>
                 </div>
               </div>
             </li>
           </template>
+
           <script>
-            const items = [
-              {
-                title: "FORD TELEMATICS™",
-                description: "Ford Telematics™ is a web application that gives you a real-time window into your fleet operations.",
-                btnText: "EXPLORE FORD TELEMATICS",
-                image: "telematics",
-                imagePosition: "left center",
-              },
-              {
-                title: "COMPLIMENTARY FORD TELEMATICS ESSENTIALS",
-                description:
-                  "Receive complimentary access to Vehicle Health data for Ford vehicles with an embedded modem, including odometer reading, malfunction and warning lights related to diagnostic trouble codes and information about oil life, engine hours and recalls.",
-                btnText: "EXPLORE FORD \nTELEMATICS ESSENTIALS",
-                image: "telematics-essential",
-              },
-              {
-                title: "FORD DATA SERVICES™",
-                description:
-                  "Ford Data Services™ is the link between your vehicle data and your business system or service provider. It's robust, secure and designed to work with your chosen systems and providers.",
-                btnText: "EXPLORE FORD DATA SERVICES",
-                image: "data-services",
-              },
-              {
-                title: "WEX FUEL CARDS",
-                description: "WEX Fuel Cards let you keep track of your fleet fuel expenses in real-time as well as a range of other benefits.",
-                btnText: "EXPLORE WEX FUEL CARDS",
-                image: "wex-fuel-cards",
-              },
-              {
-                title: "VEHICLE HARDWARE",
-                description:
-                  "New Ford vehicles come with an embedded modem that works seamlessly with our solutions to provide rich telematics data. \nWhich means you won't need to spend time and money purchasing or installing additional hardware. Plug-in devices are available for Ford vehicles without a modem and for non-Ford vehicles. \nSo you can still get the benefits of using Ford Telematics.",
-                btnText: "EXPLORE VEHICLE HARDWARE",
-                image: "vehicle-hardware",
-              },
-            ];
-            templateMount("scnOfferList", items, (elm, item) => {
-              const { imagePosition } = item;
-              if (!imagePosition) return;
+            (() => {
+              const elmList = document.querySelector(`#scnOfferList`);
+              const template = document.querySelector(`#scnOfferListTemplate`).content;
 
-              const imageElm = elm.querySelector("[data-image]");
-              if (!imageElm) return;
+              offerListItems.forEach((item) => {
+                const elm = template.cloneNode(true).querySelector("*");
 
-              imageElm.style.backgroundPosition = imagePosition;
-            });
+                let content = elm.innerHTML;
+
+                Object.entries(item).forEach(([key, value]) => {
+                  const rgx = new RegExp(`\\[{2}\\s*${key}\\s*\\]{2}`, "g");
+                  content = content.replace(rgx, value);
+                });
+
+                elm.innerHTML = content;
+
+                elmList.appendChild(elm);
+
+                const { imagePosition } = item;
+                if (imagePosition) {
+                  const image = elm.querySelector("[data-image]");
+                  if (image) {
+                    image.style.backgroundPosition = imagePosition;
+                  }
+                }
+              });
+            })();
           </script>
         </div>
       </section>
