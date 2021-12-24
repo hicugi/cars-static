@@ -1,0 +1,13 @@
+@import "../_variables.scss";
+@import "../presets/_container.scss";
+
+@import "../section/_main.scss";
+.scn-main {
+  padding-top: 23px;
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 92px;
+  }
+}
+
+@import "../section/_offer.scss";
+@import "../section/_contacts.scss";

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trucks & vans for sale" />
+    <title>Mobile Service</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/certified-pre-owned.css" />
+  </head>
+  <body>
+    <script>
+      const offerListItems = [
+        {
+          title: "24 Hour Roadside Assistance",
+          content:
+            "<p>We all know that the road can have its setbacks. But with two years of 24-hour Roadside Assistance included on your Certified Pre-Owned vehicle, assistance can be available to help you out of those less-than-ideal situations. The support you need, if you need it. How's that for convenience?</p><p><strong>The program includes:</strong></p><ul><li>Towing to the nearest licensed authorized VW dealership</li><li>Flat-tire changes and jump starts</li><li>Emergency repairs, fuel delivery, and door unlocking</li><li>Winching/extrication</li><li>Availability 365 days a year, 24 hours a day</li></ul>",
+          image: "/mainassets/images/certified-pre-owned/offer/24h-assistance.jpg",
+        },
+        {
+          title: "CARFAX Vehicle History Report",
+          content:
+            "<p>We want you to know your VW CPO vehicle inside and out, which is why every Certified Pre-Owned Volkswagen comes with a CARFAX® Vehicle History ReportTM4. This report gives you valuable insight into potential issues like title problems, ownership history, prior accidents, and more. Providing you with the assurance you need to drive away more confident than ever.</p>",
+          image: "/mainassets/images/certified-pre-owned/offer/carfax.jpg",
+        },
+        {
+          title: "100+ Point Dealer Inspection",
+          content:
+            "<p>Volkswagen Certified Pre-Owned vehicles are put through a comprehensive 100+ Point Dealer Inspection. Should a car not perform according to strict VW standards, we won't certify it until we can correct the issues using Genuine Volkswagen Parts, of course. Our 100+ Point</p><p><strong>Dealer Inspection process includes:</strong></p><ul><li>Checking engine performance for starting issues</li><li>Checking transmission for performance malfunction and noise</li><li>Testing brakes for proper function, stopping distance</li><li>Steering tests for noise, effort, vibration, and pulling</li><li>Updating per recommended or required maintenance needs</li></ul>",
+          image: "/mainassets/images/certified-pre-owned/offer/100p-dealer.jpg",
+        },
+        {
+          title: "3 - Month SiriusXM Platinum \nPlan Trial Subscription",
+          content:
+            "<p>Transform your in-car entertainment with over 150 channels of SiriusXM®. If your VW CPO vehicle is SiriusXM® equipped, you’ll enjoy a 3-Month Platinum Plan Trial Subscription with premium programming. And with the SiriusXM® App, you’ll be able to listen at home or on the go. It’s everything you could ever want to hear, practically everywhere.</p>",
+          image: "/mainassets/images/certified-pre-owned/offer/3m-trial.jpg",
+        },
+      ];
+
+      const breadcrumbs = document.querySelector(".border-bottom.background-white");
+      if (breadcrumbs) breadcrumbs.style.display = "none";
+    </script>
+
+    <main>
+      <section class="scn-main">
+        <div class="scn-main-bg">
+          <div class="scn-main-bg__sm" style="background-image: url('/mainassets/images/certified-pre-owned/main-bg-sm.jpg')"></div>
+          <div class="scn-main-bg__lg" style="background-image: url('/mainassets/images/certified-pre-owned/main-bg.jpg')"></div>
+        </div>
+
+        <div class="container">
+          <picture><img class="scn-main__logo" src="/mainassets/images/certified-pre-owned/logo.png" alt="Chevrolet logo" type="image/png" /></picture>
+
+          <p class="scn-main__under-title">CERTIFIED PRE-OWNED</p>
+          <h1 class="scn-main__title">VOLKSWAGEN VEHICLES</h1>
+          <p class="scn-main__description">
+            When it comes to buying a pre-owned vehicle, confidence is everything. The Volkswagen Certified Pre-Owned (CPO) program aims to instill it every step of the way.
+            Comprehensively tested and rigorously inspected, every Volkswagen CPO vehicle also comes with a Model-Specific Limited Warranty.1 So you can move forward with a vehicle
+            you'll be proud to call your own.
+          </p>
+          <a class="scn-main__btn" href="#contacts">CONTACT US</a>
+        </div>
+      </section>
+
+      <section class="scn-offer">
+        <div class="container">
+          <h2 class="scn-offer__title">Model-Specific WARRANTY COVERAGE</h2>
+
+          <ul class="scn-offer-list" id="scnOfferList"></ul>
+
+          <template id="scnOfferListTemplate">
+            <li class="scn-offer-list-item">
+              <div class="scn-offer-list-item__col scn-offer-list-item__col_image">
+                <div class="scn-offer-list__image">
+                  <span data-image style="background-image: url('[[ image ]]')"></span>
+                </div>
+              </div>
+
+              <div class="scn-offer-list-item__col scn-offer-list-item__col_info">
+                <div class="scn-offer-list__info">
+                  <h4 class="scn-offer-list__title">[[ title ]]</h4>
+                  <div class="scn-offer-list__content">[[ content ]]</div>
+                </div>
+              </div>
+            </li>
+          </template>
+
+          <script>
+            (() => {
+              const elmList = document.querySelector(`#scnOfferList`);
+              const template = document.querySelector(`#scnOfferListTemplate`).content;
+
+              offerListItems.forEach((item) => {
+                const elm = template.cloneNode(true).querySelector("*");
+
+                let content = elm.innerHTML;
+
+                Object.entries(item).forEach(([key, value]) => {
+                  const rgx = new RegExp(`\\[{2}\\s*${key}\\s*\\]{2}`, "g");
+                  content = content.replace(rgx, value);
+                });
+
+                elm.innerHTML = content;
+
+                elmList.appendChild(elm);
+
+                const { imagePosition } = item;
+                if (imagePosition) {
+                  const image = elm.querySelector("[data-image]");
+                  if (image) {
+                    image.style.backgroundPosition = imagePosition;
+                  }
+                }
+              });
+            })();
+          </script>
+        </div>
+      </section>
+
+      <section id="contacts" class="scn-contacts">
+        <div class="scn-main-bg">
+          <div class="scn-main-bg__sm" style="background-image: url('/mainassets/images/certified-pre-owned/contacts-bg-sm.jpg')"></div>
+          <div class="scn-main-bg__lg" style="background-image: url('/mainassets/images/certified-pre-owned/contacts-bg.jpg')"></div>
+        </div>
+
+        <div class="container">
+          <h3 class="scn-contacts__title">
+            <span>Looking to</span>
+            <span>optimize your fleet operations?</span>
+          </h3>
+          <p class="scn-contacts__subtitle">Let's talk.</p>
+
+          <form class="scn-contacts-form">
+            <!-- name -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Full Name</label>
+              <input class="scn-contacts-field__input" type="text" name="fullName" placeholder="*Your name here..." required />
+            </div>
+
+            <!-- phone -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Full Name</label>
+              <input class="scn-contacts-field__input" type="tel" name="phone" placeholder="*Your phone here..." required />
+            </div>
+
+            <!-- email -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Email</label>
+              <input class="scn-contacts-field__input" type="email" name="email" placeholder="*Your email here..." required />
+            </div>
+
+            <!-- email -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Message</label>
+              <textarea class="scn-contacts-field__textarea" name="message" placeholder="*Enter message here..." row="1" required></textarea>
+            </div>
+
+            <div class="scn-contacts-form__footer">
+              <button class="scn-contacts__btn">Contact us</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -5,14 +5,11 @@
   position: relative;
   padding-top: 48px;
   padding-bottom: 48px;
-  background: url(/../mainassets/images/contacts-bg-sm.jpg) no-repeat center;
-  background-size: cover;
   color: #ffffff;
 
   @media (min-width: $breakpoint-tablet) {
     padding-top: 52px;
     padding-bottom: 72px;
-    background-image: url(/../mainassets/images/contacts-bg.jpg);
   }
 
   &::before {
@@ -25,6 +22,30 @@
     background-color: #295ca7;
     opacity: 0.65;
     content: "";
+  }
+
+  &-bg {
+    &__sm,
+    &__lg {
+      z-index: -2;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: no-repeat center;
+      background-size: cover;
+    }
+    @media (max-width: #{$breakpoint-tablet - 0.002}) {
+      &__lg {
+        display: none;
+      }
+    }
+    @media (min-width: $breakpoint-tablet) {
+      &__sm {
+        display: none;
+      }
+    }
   }
 
   &__title {

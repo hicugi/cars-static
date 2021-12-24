@@ -32,6 +32,7 @@ $breakpoint-inline: 1180px;
       margin-bottom: 100px;
       font-size: 72px;
       line-height: 88px;
+      text-align: center;
     }
   }
 
@@ -164,8 +165,8 @@ $breakpoint-inline: 1180px;
     &__content {
       p {
         margin: 0;
-        & + & {
-          margin-top: 28px;
+        + p {
+          margin-top: 1em;
         }
       }
       ul {
