@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trucks & vans for sale" />
+    <title>Ford Commercial Trucks</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/ford-commercial-trucks.css" />
+  </head>
+  <body>
+    <script>
+      const offerListItems = [
+        {
+          title: "2022 TRANSIT CONNECT",
+          description:
+            "The Ford Transit Connect is the efficient urban work vehicle. It offers abundant interior space, which can be used for a variety of available upfits. Large side panels can be utilized to display a company name and graphics.",
+          link: "#link",
+          btnText: "BROWSE TRANSIT",
+          image: "/mainassets/images/ford-commercial-trucks/offer/2022-transit-connect.jpg",
+        },
+        {
+          title: "2022 E-TRANSIT",
+          description:
+            "America’s best-selling van* is charging forward with the 2022 Ford E-Transit.** Available in chassis cab, cutaway and cargo van models, it comes in 3 lengths and roof heights on cargo van. E-Transit offers uncompromised cargo space and access to the largest public charging network in North America.",
+          link: "#link",
+          btnText: "BROWSE E-TRANSIT",
+          image: "/mainassets/images/ford-commercial-trucks/offer/2022-e-transit.jpg",
+        },
+        {
+          title: "2022 SUPER DUTY PICKUP",
+          description:
+            "You don’t stay ahead of the pack by standing still. That’s why Ford Super Duty® for 2022 features the available 7.3L OHV gas V8 and more muscular third generation of the available Power Stroke®  V8 Turbo Diesel V8. Top-rated Super Duty gas and diesel power ratings combine with rugged frame and chassis engineering to achieve class leading GCWR, 5th wheel towing, conventional towing and payload.",
+          link: "#link",
+          btnText: "BROWSE SUPER DUTY",
+          image: "/mainassets/images/ford-commercial-trucks/offer/2022-super-duty-pickup.jpg",
+        },
+        {
+          title: "2022 CHASSIS CAB",
+          description:
+            "The 2022 Ford Super Duty®  Chassis Cab is more productive and versatile than ever, featuring an available 7.3-liter V8 engine as well as a standard 10-speed transmission. It also features exciting available technologies including Pre-Collision Assist with Automatic Emergency Braking, Lane-Keeping Alert, as well as updates to Ford Telematics™ , Ford Data Services, SYNC®  3 and new available SYNC® 4.",
+          link: "#link",
+          btnText: "BROWSE CHASSIS CAB",
+          image: "/mainassets/images/ford-commercial-trucks/offer/2022-chassis-cab.jpg",
+        },
+        {
+          title: "2021 STRIPPED CHASSIS",
+          description:
+            "The 2021 F-59 Commercial Stripped Chassis can provide a strong base for your business with a heavy-duty steel frame that allows for easy upfitting. If you have leisure in mind, then start making memories with the 2021 F-53 Motorhome Stripped Chassis, with a range of suspension packages for improved handling and an increased center of gravity build capability. No matter your vocation, each stripped chassis is Built Ford Tough® with a 7.3L V8 gas engine.",
+          link: "#link",
+          btnText: "BROWSE CHASSIS",
+          image: "/mainassets/images/ford-commercial-trucks/offer/2021-stripped-chassis.jpg",
+        },
+        {
+          title: "2022 E-SERIES \nSTRIPPED CHASSIS",
+          description:
+            "Get your business on the road with the 2022 Ford E-350 and E-450 Stripped Chassis. With a range of wheelbases, GVWR's and the choice between a standard 7.3L V8 or optional 7.3L V8 Economy-rated engine, you have the tools to deliver on your mission statement.",
+          link: "#link",
+          btnText: "BROWSE E-SERIES STRIPPED CHASSIS",
+          image: "/mainassets/images/ford-commercial-trucks/offer/2022-e-series-stripped-chassis.jpg",
+        },
+        {
+          title: "2021 TRANSIT",
+          description:
+            "The 2021 Ford Transit is ready to work. From the 10-speed automatic transmission and a choice of available engines to smart technology that helps drive confidence, the Transit was built with your productivity, comfort and bottom line in mind.",
+          link: "#link",
+          btnText: "BROWSE 2021 TRANSIT",
+          image: "/mainassets/images/ford-commercial-trucks/offer/2021-transit.jpg",
+        },
+      ];
+    </script>
+
+    <main>
+      <section class="scn-main">
+        <div class="scn-main-bg">
+          <div class="scn-main-bg__sm" style="background-image: url('/mainassets/images/ford-commercial-trucks/main-bg-sm.jpeg')"></div>
+          <div class="scn-main-bg__lg" style="background-image: url('/mainassets/images/ford-commercial-trucks/main-bg.jpeg')"></div>
+        </div>
+
+        <div class="container">
+          <picture
+            ><source srcset="/mainassets/images/ford-commercial-trucks/logo.webp" type="image/webp" />
+            <img class="scn-main__logo" src="/mainassets/images/ford-commercial-trucks/logo.png" alt="Chevrolet logo" type="image/png"
+          /></picture>
+
+          <h1 class="scn-main__title">The Family of Ford <br />Commercial Vehicles</h1>
+          <p class="scn-main__description">
+            If you’re looking for a truck that works as hard as you do, you want a Built Ford Tough® commercial truck. From vans and passenger wagons to pickups and cutaways, we
+            have a tough and rugged vehicle that can meet your needs.
+          </p>
+        </div>
+      </section>
+
+      <section class="scn-business">
+        <div class="container">
+          <h2 class="scn-business__title">Built To Support Those Who <br />Support Our World.</h2>
+          <div class="scn-business__description">
+            <p>Your job has never been tougher. And we’ll be here to help you keep working.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scn-offer">
+        <div class="container">
+          <ul class="scn-offer-list" id="scnOfferList"></ul>
+
+          <template id="scnOfferListTemplate">
+            <li class="scn-offer-list-item">
+              <div class="scn-offer-list-item__col scn-offer-list-item__col_image">
+                <div class="scn-offer-list__image">
+                  <span data-image style="background-image: url('[[ image ]]')"></span>
+                </div>
+              </div>
+
+              <div class="scn-offer-list-item__col scn-offer-list-item__col_info">
+                <div class="scn-offer-list__info">
+                  <h4 class="scn-offer-list__title">[[ title ]]</h4>
+                  <p class="scn-offer-list__description">[[ description ]]</p>
+                  <a class="scn-offer-list__btn" href="[[ link ]]">[[ btnText ]]</a>
+                </div>
+              </div>
+            </li>
+          </template>
+
+          <script>
+            (() => {
+              const elmList = document.querySelector(`#scnOfferList`);
+              const template = document.querySelector(`#scnOfferListTemplate`).content;
+
+              offerListItems.forEach((item) => {
+                const elm = template.cloneNode(true).querySelector("*");
+
+                let content = elm.innerHTML;
+
+                Object.entries(item).forEach(([key, value]) => {
+                  const rgx = new RegExp(`\\[{2}\\s*${key}\\s*\\]{2}`, "g");
+                  content = content.replace(rgx, value);
+                });
+
+                elm.innerHTML = content;
+
+                elmList.appendChild(elm);
+
+                const { imagePosition } = item;
+                if (imagePosition) {
+                  const image = elm.querySelector("[data-image]");
+                  if (image) {
+                    image.style.backgroundPosition = imagePosition;
+                  }
+                }
+              });
+            })();
+          </script>
+        </div>
+      </section>
+
+      <section class="scn-contacts">
+        <div class="container">
+          <h3 class="scn-contacts__title">
+            <span>Looking to</span>
+            <span>optimize your fleet operations?</span>
+          </h3>
+          <p class="scn-contacts__subtitle">Let's talk.</p>
+
+          <form class="scn-contacts-form">
+            <!-- name -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Full Name</label>
+              <input class="scn-contacts-field__input" type="text" name="fullName" placeholder="*Your name here..." required />
+            </div>
+
+            <!-- phone -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Full Name</label>
+              <input class="scn-contacts-field__input" type="tel" name="phone" placeholder="*Your phone here..." required />
+            </div>
+
+            <!-- email -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Email</label>
+              <input class="scn-contacts-field__input" type="email" name="email" placeholder="*Your email here..." required />
+            </div>
+
+            <!-- email -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Message</label>
+              <textarea class="scn-contacts-field__textarea" name="message" placeholder="*Enter message here..." row="1" required></textarea>
+            </div>
+
+            <div class="scn-contacts-form__footer">
+              <button class="scn-contacts__btn">Contact us</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

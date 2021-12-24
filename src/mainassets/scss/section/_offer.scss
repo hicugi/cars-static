@@ -149,6 +149,7 @@ $breakpoint-inline: 1180px;
       font-size: 36px;
       font-weight: 700;
       line-height: 48px;
+      white-space: pre-wrap;
       @include breakpointInlineMin() {
         margin-bottom: 28px;
       }
