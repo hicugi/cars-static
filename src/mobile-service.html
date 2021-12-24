@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trucks & vans for sale" />
+    <title>Mobile Service</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/mobile-service.css" />
+  </head>
+  <body>
+    <script>
+      const offerListItems = [
+        {
+          title: "Mobile Service is Available",
+          content: "<p>A certified Boggus Ford technician will come to your home, workplace or desired location for repairs with most services being completed within 1 hour.</p>",
+          image: "/mainassets/images/mobile-service/offer/1.jpg",
+        },
+        {
+          title: "Available Services",
+          content:
+            "<p>America’s best-selling van* is charging forward with the 2022 Ford E-Transit.**</p><ul><li>Light Repairs & Maintenance Service</li><li>Front or Rear Brake Service</li><li>Oil Changes</li><li>Tire Rotations</li><li>Most Service Recalls</li><li>Battery Replacement</li><li>Wiper Blade Replacement</li><li>Filter Replacement</li></ul>",
+          image: "/mainassets/images/mobile-service/offer/2.jpg",
+        },
+      ];
+
+      const breadcrumbs = document.querySelector(".border-bottom.background-white");
+      if (breadcrumbs) breadcrumbs.style.display = "none";
+    </script>
+
+    <main>
+      <section class="scn-main">
+        <div class="scn-main-bg">
+          <div class="scn-main-bg__sm" style="background-image: url('/mainassets/images/mobile-service/main-bg-sm.jpg')"></div>
+          <div class="scn-main-bg__lg" style="background-image: url('/mainassets/images/mobile-service/main-bg.jpg')"></div>
+        </div>
+
+        <div class="container">
+          <p class="scn-main__under-title">Introducing</p>
+          <h1 class="scn-main__title">Repair Services - <br />We'll Come to You!</h1>
+          <p class="scn-main__description">Servicing all makes and models throughout the entire RGV</p>
+          <a class="scn-main__btn" href="#contacts">CONTACT US</a>
+        </div>
+      </section>
+
+      <section class="scn-offer">
+        <div class="container">
+          <ul class="scn-offer-list" id="scnOfferList"></ul>
+
+          <template id="scnOfferListTemplate">
+            <li class="scn-offer-list-item">
+              <div class="scn-offer-list-item__col scn-offer-list-item__col_image">
+                <div class="scn-offer-list__image">
+                  <span data-image style="background-image: url('[[ image ]]')"></span>
+                </div>
+              </div>
+
+              <div class="scn-offer-list-item__col scn-offer-list-item__col_info">
+                <div class="scn-offer-list__info">
+                  <h4 class="scn-offer-list__title">[[ title ]]</h4>
+                  <div class="scn-offer-list__content">[[ content ]]</div>
+                </div>
+              </div>
+            </li>
+          </template>
+
+          <script>
+            (() => {
+              const elmList = document.querySelector(`#scnOfferList`);
+              const template = document.querySelector(`#scnOfferListTemplate`).content;
+
+              offerListItems.forEach((item) => {
+                const elm = template.cloneNode(true).querySelector("*");
+
+                let content = elm.innerHTML;
+
+                Object.entries(item).forEach(([key, value]) => {
+                  const rgx = new RegExp(`\\[{2}\\s*${key}\\s*\\]{2}`, "g");
+                  content = content.replace(rgx, value);
+                });
+
+                elm.innerHTML = content;
+
+                elmList.appendChild(elm);
+
+                const { imagePosition } = item;
+                if (imagePosition) {
+                  const image = elm.querySelector("[data-image]");
+                  if (image) {
+                    image.style.backgroundPosition = imagePosition;
+                  }
+                }
+              });
+            })();
+          </script>
+        </div>
+      </section>
+
+      <section id="contacts" class="scn-contacts">
+        <div class="container">
+          <h3 class="scn-contacts__title">
+            <span>Looking to</span>
+            <span>optimize your fleet operations?</span>
+          </h3>
+          <p class="scn-contacts__subtitle">Let's talk.</p>
+
+          <form class="scn-contacts-form">
+            <!-- name -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Full Name</label>
+              <input class="scn-contacts-field__input" type="text" name="fullName" placeholder="*Your name here..." required />
+            </div>
+
+            <!-- phone -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Full Name</label>
+              <input class="scn-contacts-field__input" type="tel" name="phone" placeholder="*Your phone here..." required />
+            </div>
+
+            <!-- email -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Email</label>
+              <input class="scn-contacts-field__input" type="email" name="email" placeholder="*Your email here..." required />
+            </div>
+
+            <!-- email -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Message</label>
+              <textarea class="scn-contacts-field__textarea" name="message" placeholder="*Enter message here..." row="1" required></textarea>
+            </div>
+
+            <div class="scn-contacts-form__footer">
+              <button class="scn-contacts__btn">Contact us</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
