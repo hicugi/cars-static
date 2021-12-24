@@ -121,8 +121,6 @@ $breakpoint-inline: 1180px;
           width: 100%;
           max-width: 1077px;
           height: 100%;
-          background: no-repeat center;
-          background-size: auto 100%;
 
           @media (min-width: 1180px) {
             width: calc(100vw - 636px);
