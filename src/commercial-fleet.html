@@ -5,11 +5,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Trucks & vans for sale" />
-    <title>Chevrolet Commercial Fleet</title>
+    <title>Commercial Fleet</title>
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/commercial-fleet.css" />
   </head>
   <body>
+    <script>
+      var productListItems = [
+        {
+          title: "CHEVROLET TRUCKS AND VANS",
+          logo: "/mainassets/images/commercial-fleet/product/logo-chevrolet.png",
+          items: [
+            {
+              title: "Chevrolet Colorado",
+              image: "/mainassets/images/commercial-fleet/product/colorado.jpg",
+            },
+            {
+              title: "Chevrolet Silverado 1500",
+              image: "/mainassets/images/commercial-fleet/product/silverado-1500.jpg",
+            },
+            {
+              title: "Chevrolet Silverado 2500 HD",
+              image: "/mainassets/images/commercial-fleet/product/silverado-2500hd.jpg",
+            },
+            {
+              title: "Chevrolet Silverado 3500 HD",
+              image: "/mainassets/images/commercial-fleet/product/silverado-3500hd.jpg",
+            },
+          ],
+        },
+        {
+          title: "FORD TRUCKS AND VANS",
+          logo: "/mainassets/images/commercial-fleet/product/logo-ford.png",
+          items: [
+            {
+              title: "Chevrolet Low \nCab Forward 4500",
+              image: "/mainassets/images/commercial-fleet/product/low-cab-forward-4500.jpg",
+            },
+            {
+              title: "Chevrolet City Express \nCargo Van",
+              image: "/mainassets/images/commercial-fleet/product/city-express-cargo-van.jpg",
+            },
+            {
+              title: "Chevrolet Express \nCargo Van",
+              image: "/mainassets/images/commercial-fleet/product/express-cargo-van.jpg",
+            },
+            {
+              title: "Chevrolet Express \nCommercial Cutaway",
+              image: "/mainassets/images/commercial-fleet/product/silverado-3500hd.jpg",
+            },
+          ],
+        },
+        {
+          title: "RAM TRUCKS AND VANS",
+          logo: "/mainassets/images/commercial-fleet/product/logo-ram.png",
+          items: [
+            {
+              title: "Chevrolet Low \nCab Forward 4500",
+              image: "/mainassets/images/commercial-fleet/product/low-cab-forward-4500.jpg",
+            },
+            {
+              title: "Chevrolet City Express \nCargo Van",
+              image: "/mainassets/images/commercial-fleet/product/city-express-cargo-van.jpg",
+            },
+            {
+              title: "Chevrolet Express \nCargo Van",
+              image: "/mainassets/images/commercial-fleet/product/express-cargo-van.jpg",
+            },
+            {
+              title: "Chevrolet Express \nCommercial Cutaway",
+              image: "/mainassets/images/commercial-fleet/product/express-commercial-cutaway.jpg",
+            },
+          ],
+        },
+        {
+          title: "GMC TRUCKS AND VANS",
+          logo: "/mainassets/images/commercial-fleet/product/logo-gmc.png",
+          items: [
+            {
+              title: "Chevrolet Low \nCab Forward 4500",
+              image: "/mainassets/images/commercial-fleet/product/gmc-1.jpg",
+            },
+            {
+              title: "Chevrolet City Express \nCargo Van",
+              image: "/mainassets/images/commercial-fleet/product/gmc-2.jpg",
+            },
+            {
+              title: "Chevrolet Express \nCargo Van",
+              image: "/mainassets/images/commercial-fleet/product/gmc-3.jpg",
+            },
+            {
+              title: "Chevrolet Express \nCommercial Cutaway",
+              image: "/mainassets/images/commercial-fleet/product/gmc-4.jpg",
+            },
+          ],
+        },
+      ];
+
+      const breadcrumbs = document.querySelector(".border-bottom.background-white");
+      if (breadcrumbs) breadcrumbs.style.display = "none";
+    </script>
+
     <main>
       <section class="scn-main">
         <div class="scn-main-bg">
@@ -77,6 +173,85 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="scn-products">
+        <div id="productList" class="container"></div>
+
+        <!-- template for product group -->
+        <template id="productListTemplate">
+          <section class="scn-products__section">
+            <header class="scn-products__header scn-products__header_centered">
+              <div class="scn-products__header-main">
+                <div class="scn-products__logo"><img src="[[ logo ]]" alt="[[ title ]]" /></div>
+                <h3 class="scn-products__title">[[ title ]]</h3>
+              </div>
+
+              <a class="scn-products__show-more-link" href="/inventory?limit=21&offset=0&criteria%5Bcond%5D=[[ titleLink ]]">View All Trucks</a>
+            </header>
+
+            <ul class="scn-products-list" data-list></ul>
+          </section>
+        </template>
+
+        <!-- template for product's items list -->
+        <template id="productListChildTemplate">
+          <li class="scn-products-list__item">
+            <div class="scn-products-list__image" style="background-image: url('[[ image ]]')">
+              <img src="[[ image ]]" alt="[[ title ]]" />
+            </div>
+
+            <h4 class="scn-products-list__title">[[ title ]]</h4>
+            <a class="scn-products-list__link" href="[[ link ]]">learn more</a>
+          </li>
+        </template>
+
+        <script>
+          (() => {
+            const elmList = document.querySelector("#productList");
+
+            const getTemplate = (id) => {
+              const { content } = document.querySelector(`#${id}`);
+              return content.cloneNode(true).querySelector("*");
+            };
+
+            const replaceKeys = (elm, item) => {
+              let content = elm.innerHTML;
+
+              Object.entries(item).forEach(([key, value]) => {
+                const rgx = new RegExp(`\\[{2}\\s*${key}\\s*\\]{2}`, "g");
+                content = content.replace(rgx, value);
+              });
+
+              elm.innerHTML = content;
+              return elm;
+            };
+
+            const getChildContent = (item) => {
+              if (item.link === undefined) {
+                item.link = item.title.replace(/\s/g, "+").replace("\n", "");
+              }
+
+              const elm = getTemplate("productListChildTemplate");
+              return replaceKeys(elm, item);
+            };
+
+            productListItems.forEach((item) => {
+              item.titleLink = item.title.replace(/\s/g, "+");
+
+              const elm = getTemplate("productListTemplate");
+              const replacedElm = replaceKeys(elm, item);
+
+              elmList.appendChild(replacedElm);
+
+              const elmChildList = elm.querySelector("[data-list]");
+              item.items.forEach((childItem) => {
+                const childElm = getChildContent(childItem);
+                elmChildList.appendChild(childElm);
+              });
+            });
+          })();
+        </script>
       </section>
     </main>
   </body>

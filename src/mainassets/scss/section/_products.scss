@@ -4,10 +4,34 @@
   margin-bottom: 88px;
   color: $color-default;
 
-  &__header {
-    margin-bottom: 48px;
+  &__section + &__section,
+  &-list + &__header {
+    margin-top: 64px;
+    @media screen and (min-width: $breakpoint-tablet) {
+      margin-top: 100px;
+    }
   }
 
+  &__header {
+    margin-bottom: 48px;
+
+    &_centered {
+      @media (max-width: #{$breakpoint-tablet - 0.002}) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+
+    @media (max-width: #{$breakpoint-tablet - 0.002}) {
+      margin-bottom: 16px;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      margin-right: 24px;
+    }
+  }
   &__title {
     margin: 0 0 24px;
     font-size: 24px;
@@ -37,6 +61,11 @@
 
     &__item {
       position: relative;
+      @media (max-width: #{$breakpoint-tablet - 0.002}) {
+        & + & {
+          margin-top: 64px;
+        }
+      }
     }
 
     &__image {
@@ -67,6 +96,7 @@
       font-weight: 700;
       line-height: 1.5em;
       text-align: center;
+      white-space: pre-wrap;
 
       @media screen and (min-width: 1280px) {
         font-size: 24px;
@@ -99,16 +129,16 @@
     }
   }
 
-  &-list + &__header {
-    margin-top: 100px;
-  }
-
   @media (min-width: $breakpoint-tablet) {
     &__header {
       margin-bottom: 72px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+
+      &-main {
+        margin-bottom: 24px;
+        min-width: 720px;
+        display: flex;
+        align-items: center;
+      }
     }
 
     &__title {
@@ -127,6 +157,18 @@
         padding-left: $padding-side;
         padding-right: $padding-side;
         width: 50%;
+      }
+    }
+  }
+  @media (min-width: 980px) {
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      &-main {
+        margin-bottom: 0;
       }
     }
   }
