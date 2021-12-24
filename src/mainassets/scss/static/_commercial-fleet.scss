@@ -1,0 +1,23 @@
+@import "../_variables.scss";
+@import "../presets/_container.scss";
+
+@import "../section/_main.scss";
+.scn-main {
+  padding-top: 118px;
+
+  @media (max-width: $breakpoint-tablet) {
+    @include scnMainLogos(1, 100px);
+    @include scnMainLogos(2, 167px, 3);
+    @include scnMainLogos(3, 100px);
+    @include scnMainLogos(4, 58px, 1);
+    @include scnMainLogos(5, 122px, 2);
+  }
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 150px;
+  }
+}
+
+@import "../section/_about.scss";
+@import "../section/_products.scss";
+@import "../section/_business.scss";
+@import "../section/_service.scss";
