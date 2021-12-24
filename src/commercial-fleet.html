@@ -249,7 +249,8 @@
 
             const getChildContent = (item) => {
               if (item.link === undefined) {
-                item.link = item.title.replace(/\s/g, "+").replace("\n", "");
+                const prevUrl = "/inventory?limit=21&offset=0&criteria%5Bcond%5D=";
+                item.link = [prevUrl, item.title.replace(/\s/g, "+").replace("\n", "")].join("");
               }
 
               const elm = getTemplate("productListChildTemplate");
