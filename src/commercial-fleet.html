@@ -11,7 +11,7 @@
   </head>
   <body>
     <script>
-      var productListItems = [
+      const productListItems = [
         {
           title: "CHEVROLET TRUCKS AND VANS",
           logo: "/mainassets/images/commercial-fleet/product/logo-chevrolet.png",
@@ -99,6 +99,26 @@
               image: "/mainassets/images/commercial-fleet/product/gmc-4.jpg",
             },
           ],
+        },
+      ];
+      const serviceItems = [
+        {
+          title: "Henna is Your \nBusiness Elite Dealer",
+          image: "/mainassets/images/commercial-fleet/service/henna.jpg",
+          description:
+            "Henna Chevrolet is a Business Elite Dealer, which means we provide a range of services to help your business running smoothly. These include a dedicated dealer representative, extended service hours, and loaner vehicles. Your dealer representative will work with you to determine & become familiar with your personal business needs, and they’ll help you select the right vehicle for the jobs you need completed.",
+        },
+        {
+          title: "Group & Association \nIncentives",
+          image: "/mainassets/images/commercial-fleet/service/group.jpg",
+          description:
+            "Chevrolet strives to give back to those who partner with us, which is why they offer special business association offers. If you are a member of the National Association of Home Builders, Associated Builder and Contractors, Inc. , or The Associated General Contractors of America, you can qualify for special offers & discounts when you buy an eligible Chevrolet for your business. If you’re ready to invest in a vehicle that will help your business, come to Henna Chevrolet to find the perfect Commercial vehicle or explore our Commercial Inventory online! If you have any additional questions regarding Commercial vehicles, contact our Chevy Commercial sales specialists today.",
+        },
+        {
+          title: "Upfit & Accessory \nAssistance",
+          image: "/mainassets/images/commercial-fleet/service/upfit.jpg",
+          description:
+            "Depending on your individual business needs, you may need custom Upfit & accessories for your commercial vehicle. These will allow you to tailor a commercial vehicle perfectly to your business. Chevrolet also has Business Choice Offers, which are cash allowances on Upfits or Accessories for Commercial vehicles! In order to take advantage of these specials, you must use the vehicle for day-to-day operations, not just transportation.",
         },
       ];
 
@@ -252,6 +272,53 @@
             });
           })();
         </script>
+      </section>
+
+      <section class="scn-business">
+        <div class="container">
+          <h2 class="scn-business__title">CHEVROLET COMMERCIAL VEHICLES <br />MEAN BUSINESS</h2>
+          <div class="scn-business__description">
+            <p>
+              Whenever you have a tough job on your hands, you can always count on Chevrolet Commercial vehicles to deliver! Chevrolet has been helping companies accomplish their
+              project goals for over 100 years, and with the most comprehensive commercial vehicle lineup, you’ll easily find the perfect truck, van, or SUV to get any job done
+              right.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scn-service">
+        <div class="container">
+          <ul id="servicesList" class="scn-service-list"></ul>
+          <template id="servicesListTemplate">
+            <li class="scn-service-list__item">
+              <div class="scn-service-list__image" style="background-image: url('[[ image ]]')">
+                <img src="[[ image ]]" alt="[[ title ]]" />
+              </div>
+
+              <h4 class="scn-service-list__title">[[ title ]]</h4>
+              <p class="scn-service-list__description">[[ description ]]</p>
+            </li>
+          </template>
+
+          <script>
+            serviceItems.forEach((item) => {
+              const { content } = document.querySelector("#servicesListTemplate");
+              const elm = content.cloneNode(true).querySelector("*");
+
+              let itemContent = elm.innerHTML;
+
+              Object.entries(item).forEach(([key, value]) => {
+                const rgx = new RegExp(`\\[{2}\\s*${key}\\s*\\]{2}`, "g");
+                itemContent = itemContent.replace(rgx, value);
+              });
+
+              elm.innerHTML = itemContent;
+
+              document.querySelector("#servicesList").appendChild(elm);
+            });
+          </script>
+        </div>
       </section>
     </main>
   </body>
