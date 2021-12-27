@@ -52,4 +52,17 @@
     display: flex;
     justify-content: center;
   }
+
+  &__btn {
+    &_lg {
+      @media screen and (max-width: #{$breakpoint-tablet - 0.02}) {
+        display: none;
+      }
+    }
+    &_sm {
+      @media screen and (min-width: $breakpoint-tablet) {
+        display: none;
+      }
+    }
+  }
 }
