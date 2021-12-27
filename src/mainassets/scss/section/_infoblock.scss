@@ -8,13 +8,10 @@
   }
 
   &-logo {
-    margin-bottom: 24px;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 31px;
 
     &__container {
       position: relative;
-      padding-right: 68px;
     }
 
     img {
@@ -23,22 +20,48 @@
 
     &__icon {
       position: absolute;
-      right: -79px;
-      top: -120px;
+      right: -11px;
+      top: -68px;
     }
     &__image {
       position: relative;
+    }
+
+    @media screen and (max-width: #{$breakpoint-tablet - 0.02}) {
+      &__image {
+        margin-left: -10px;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: center;
+
+      &__container {
+        padding-right: 68px;
+      }
+
+      &__icon {
+        right: -79px;
+        top: -120px;
+      }
     }
   }
 
   &__title {
     position: relative;
     margin: 0 0 1em;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 700;
-    line-height: 58px;
+    line-height: 44px;
     text-transform: uppercase;
     text-align: center;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      font-size: 48px;
+      line-height: 58px;
+    }
   }
 
   &-instr {
@@ -54,14 +77,14 @@
       margin: 0 0 1em;
     }
     &__title {
-      margin: 0 0 35px;
+      margin: 0 0 24px;
       text-transform: uppercase;
     }
 
     &__content {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
-      line-height: 80px;
+      line-height: 50px;
     }
     &__tag {
       $padding: 21px;
@@ -78,7 +101,7 @@
         transform: translate(-50%, -50%);
         border-radius: 72px;
         width: 100%;
-        height: calc(100% - 2px);
+        height: calc(100% - 14px);
         background-color: #ffffff;
         content: "";
       }
@@ -88,6 +111,27 @@
       }
       &_red {
         color: #ff0516;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      &__description {
+        margin-bottom: 36px;
+      }
+      &__title {
+        margin-bottom: 35px;
+      }
+      &__content {
+        font-size: 28px;
+        line-height: 80px;
+      }
+      &__tag::before {
+        height: calc(100% - 2px);
+      }
+    }
+    @media screen and (min-width: 1100px) {
+      &__content br {
+        display: none;
       }
     }
   }

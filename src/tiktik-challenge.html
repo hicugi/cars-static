@@ -43,7 +43,7 @@
             <p class="scn-infoblock-instr__description">15 Scholarships Awarded to 2022 High School Seniors</p>
             <p class="scn-infoblock-instr__title">HOW TO ENTER:</p>
             <p class="scn-infoblock-instr__content">
-              <span>🎥Create a TikTok video using</span>
+              <span>🎥Create a TikTok video using<br /></span>
               <span class="scn-infoblock-instr__tag scn-infoblock-instr__tag_blue">#payneauto2022</span>
               <span>and tag</span>
               <span class="scn-infoblock-instr__tag scn-infoblock-instr__tag_red">@payneautogroup</span>
@@ -59,7 +59,7 @@
             <span>the online application below</span>
           </p>
 
-          <form class="scn-contacts-form">
+          <form id="scnConstactsForm" class="scn-contacts-form">
             <!-- name -->
             <div class="scn-contacts-field">
               <label class="scn-contacts-field__label">Full Name (required)</label>
@@ -95,6 +95,9 @@
               <label class="scn-contacts-field__label">College or Trade School you will be attending</label>
               <input class="scn-contacts-field__input" type="text" name="nextSchool" placeholder="*Enter college or trade school name here..." required />
             </div>
+
+            <!-- hanck for clicking from outside -->
+            <button style="display: none">submit</button>
           </form>
 
           <div class="apprequirements">
@@ -118,7 +121,13 @@
           </div>
 
           <div class="scn-appform__footer">
-            <button class="scn-contacts__btn">SUBMIT YOUR APPLICATION</button>
+            <script>
+              function handleSubmitClick() {
+                const formBtn = document.querySelector("#scnConstactsForm button");
+                formBtn.click();
+              }
+            </script>
+            <button class="scn-contacts__btn" type="button" onclick="handleSubmitClick()">SUBMIT YOUR APPLICATION</button>
           </div>
         </div>
       </section>
