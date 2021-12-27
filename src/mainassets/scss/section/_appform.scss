@@ -32,13 +32,18 @@
     display: grid;
     grid-gap: 24px;
 
+    .captcha-box {
+      margin: 0 !important;
+      padding: 0 !important;
+      grid-area: footer;
+    }
     button[type="submit"] {
       display: none;
     }
 
     @media screen and (min-width: 840px) {
       margin-bottom: 64px;
-      grid-template: ". ." / 1fr 1fr;
+      grid-template: ". ." ". ." ". ." "footer footer" / 1fr 1fr;
     }
 
     @media screen and (min-width: 1100px) {
