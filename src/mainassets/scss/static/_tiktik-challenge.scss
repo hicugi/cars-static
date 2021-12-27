@@ -16,6 +16,42 @@
 }
 
 @import "../presets/_container.scss";
+.container {
+  $width: 1324px;
+  max-width: #{$width + $container-padding-inner * 2};
+}
 
 @import "../section/_infoblock.scss";
+.scn-infoblock {
+  margin-bottom: 64px;
+}
+
+@import "../section/_appform.scss";
 @import "../section/_contacts.scss";
+.apprequirements {
+  margin-bottom: 64px;
+
+  &__title {
+    margin: 0 0 36px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    text-transform: uppercase;
+  }
+
+  &-list {
+    margin: 0;
+    padding: 0 0 0 27px;
+    display: grid;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2em;
+
+    &__container {
+      display: grid;
+      grid-template: ". ." / 1fr 1fr;
+      grid-gap: 0 49px;
+    }
+  }
+}

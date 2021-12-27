@@ -1,0 +1,43 @@
+.scn-appform {
+  padding-bottom: 97px;
+  
+  &__title {
+    margin: 0 0 24px;
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+
+      &:first-child {
+        margin-bottom: 4px;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+      }
+      &:last-child {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 58px;
+      }
+    }
+  }
+
+  .scn-contacts {
+    &-form {
+      margin-bottom: 64px;
+      max-width: 100%;
+      display: grid;
+      grid-template: ". ." / 1fr 1fr;
+      grid-gap: 24px 49px;
+    }
+    &-field + .scn-contacts-field {
+      margin-top: 0;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
+}
