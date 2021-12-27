@@ -50,13 +50,35 @@
   }
 
   &__title {
-    position: relative;
     margin: 0 0 1em;
     font-size: 36px;
     font-weight: 700;
     line-height: 44px;
     text-transform: uppercase;
     text-align: center;
+
+    span {
+      position: relative;
+      padding-left: 48px;
+
+      &::before {
+        background: url(/mainassets/images/tiktik-challenge/ico-money.png) no-repeat;
+        background-position: left top;
+        background-size: 41px auto;
+        position: absolute;
+        left: 2px;
+        top: -1px;
+        width: 54px;
+        height: 58px;
+        content: "";
+      }
+      @media screen and (min-width: $breakpoint-tablet) {
+        padding-left: 62px;
+        &::before {
+          background-size: 54px auto;
+        }
+      }
+    }
 
     @media screen and (min-width: $breakpoint-tablet) {
       font-size: 48px;
@@ -74,17 +96,39 @@
       line-height: 29px;
     }
     &__description {
-      margin: 0 0 1em;
+      margin: 0 0 35px;
     }
     &__title {
-      margin: 0 0 24px;
+      margin: 0 0 28px;
       text-transform: uppercase;
     }
 
     &__content {
+      margin: 0;
       font-size: 24px;
       font-weight: 700;
       line-height: 50px;
+
+      span:first-child {
+        position: relative;
+        padding-left: 30px;
+
+        &::before {
+          background: url(/mainassets/images/tiktik-challenge/ico-camera.png) no-repeat;
+          background-position: left top;
+          background-size: 25px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 29px;
+          height: 29px;
+          content: "";
+          @media screen and (min-width: $breakpoint-tablet) {
+            top: -1px;
+            background-size: 29px;
+          }
+        }
+      }
     }
     &__tag {
       $padding: 21px;
@@ -119,7 +163,7 @@
         margin-bottom: 36px;
       }
       &__title {
-        margin-bottom: 35px;
+        margin-bottom: 23px;
       }
       &__content {
         font-size: 28px;
