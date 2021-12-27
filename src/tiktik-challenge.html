@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikTik Challenge</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/tiktik-challenge.css" />
+  </head>
+  <body>
+    <script>
+      const breadcrumbs = document.querySelector(".border-bottom.background-white");
+      if (breadcrumbs) breadcrumbs.style.display = "none";
+    </script>
+
+    <main class="tiktik-challenge">
+      <picture>
+        <source srcset="/mainassets/images/tiktik-challenge/bg.webp" type="image/webp" media="(min-width: 768px)" />
+        <source srcset="/mainassets/images/tiktik-challenge/bg.jpg" type="image/jpg" media="(min-width: 768px)" />
+        <source srcset="/mainassets/images/tiktik-challenge/bg-sm.webp" type="image/webp" />
+        <img class="tiktik-challenge__bg" src="/mainassets/images/tiktik-challenge/bg-sm.jpg" alt="logo" />
+      </picture>
+
+      <section class="scn-infoblock">
+        <div class="container">
+          <div class="scn-infoblock-logo">
+            <div class="scn-infoblock-logo__container">
+              <picture>
+                <source srcset="/mainassets/images/tiktik-challenge/logo-icon.png" media="(min-width: 768px)" />
+                <img class="scn-infoblock-logo__icon" src="/mainassets/images/tiktik-challenge/logo-icon-sm.png" alt="Logo" />
+              </picture>
+              <picture>
+                <source srcset="/mainassets/images/tiktik-challenge/logo.png" media="(min-width: 768px)" />
+                <img class="scn-infoblock-logo__image" src="/mainassets/images/tiktik-challenge/logo-sm.png" alt="Logo" />
+              </picture>
+            </div>
+          </div>
+
+          <h1 class="scn-infoblock__title">💸 $1,000 Cash Scholarship</h1>
+
+          <div class="scn-infoblock-instr">
+            <p class="scn-infoblock-instr__description">15 Scholarships Awarded to 2022 High School Seniors</p>
+            <p class="scn-infoblock-instr__title">HOW TO ENTER:</p>
+            <p class="scn-infoblock-instr__content">
+              <span>🎥Create a TikTok video using</span>
+              <span class="scn-infoblock-instr__tag scn-infoblock-instr__tag_blue">#payneauto2022</span>
+              <span>and tag</span>
+              <span class="scn-infoblock-instr__tag scn-infoblock-instr__tag_red">@payneautogroup</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="scn-appform">
+        <div class="container">
+          <p class="scn-appform__title">
+            <span>Fill out</span>
+            <span>the online application below</span>
+          </p>
+
+          <form class="scn-contacts-form">
+            <!-- name -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Full Name (required)</label>
+              <input class="scn-contacts-field__input" type="text" name="fullName" placeholder="*Your name here..." required />
+            </div>
+
+            <!-- school -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">High School (required)</label>
+              <input class="scn-contacts-field__input" type="text" name="school" placeholder="*Enter high school name here..." required />
+            </div>
+
+            <!-- phone -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Phone (required)</label>
+              <input class="scn-contacts-field__input" type="tel" name="phone" placeholder="*Your phone here..." required />
+            </div>
+
+            <!-- referrer -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Counselor or Go Center referred by</label>
+              <input class="scn-contacts-field__input" type="text" name="referrer" placeholder="*Enter here..." required />
+            </div>
+
+            <!-- email -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">Email</label>
+              <input class="scn-contacts-field__input" type="email" name="email" placeholder="*Your email here..." required />
+            </div>
+
+            <!-- nextSchool -->
+            <div class="scn-contacts-field">
+              <label class="scn-contacts-field__label">College or Trade School you will be attending</label>
+              <input class="scn-contacts-field__input" type="text" name="nextSchool" placeholder="*Enter college or trade school name here..." required />
+            </div>
+
+            <div class="apprequirements">
+              <p class="apprequirements__title">Requirements</p>
+              <ul class="apprequirements__list">
+                <li>Must use the current Payne Auto Group --do not alter in any way</li>
+                <li>Selling Preowned Vehicles</li>
+                <li>Use one of the following creative guidelines</li>
+                <li>Must be 17-19 years old, enrolled in accredited RGV High School and anticipating senior graduate</li>
+                <li>Community Involvement</li>
+                <li>Must be a US Citizen</li>
+                <li>Selling New Trucks</li>
+                <li>All submissions are due April 30th at 5 PM</li>
+                <li>Selling New Cars</li>
+              </ul>
+            </div>
+
+            <div class="scn-contacts-form__footer">
+              <button class="scn-contacts__btn">SUBMIT YOUR APPLICATION</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

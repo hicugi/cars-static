@@ -1,0 +1,21 @@
+@import "../_variables.scss";
+
+.tiktik-challenge {
+  z-index: 0;
+  position: relative;
+  color: #ffffff;
+
+  &__bg {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@import "../presets/_container.scss";
+
+@import "../section/_infoblock.scss";
+@import "../section/_contacts.scss";

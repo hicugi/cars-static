@@ -1,0 +1,94 @@
+@import "../_variables.scss";
+
+.scn-infoblock {
+  padding-top: 70px;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    padding-top: 121px;
+  }
+
+  &-logo {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+      position: relative;
+      padding-right: 68px;
+    }
+
+    img {
+      display: block;
+    }
+
+    &__icon {
+      position: absolute;
+      right: -79px;
+      top: -120px;
+    }
+    &__image {
+      position: relative;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0 0 1em;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &-instr {
+    text-align: center;
+
+    &__description,
+    &__title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+    }
+    &__description {
+      margin: 0 0 1em;
+    }
+    &__title {
+      margin: 0 0 35px;
+      text-transform: uppercase;
+    }
+
+    &__content {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 80px;
+    }
+    &__tag {
+      $padding: 21px;
+      position: relative;
+      margin: 0 5px;
+      padding: 0 #{$padding};
+      display: inline-block;
+
+      &::before {
+        z-index: -1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 72px;
+        width: 100%;
+        height: calc(100% - 2px);
+        background-color: #ffffff;
+        content: "";
+      }
+
+      &_blue {
+        color: #0e0cff;
+      }
+      &_red {
+        color: #ff0516;
+      }
+    }
+  }
+}
