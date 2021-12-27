@@ -34,6 +34,10 @@
       display: grid;
       grid-gap: 24px;
 
+      button[type=submit] {
+        display: none;
+      }
+
       @media screen and (min-width: 840px) {
         margin-bottom: 64px;
         grid-template: ". ." / 1fr 1fr;
