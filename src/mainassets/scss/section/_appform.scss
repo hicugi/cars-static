@@ -27,28 +27,40 @@
     }
   }
 
+  @mixin formStyles {
+    margin-bottom: 48px;
+    display: grid;
+    grid-gap: 24px;
+
+    button[type="submit"] {
+      display: none;
+    }
+
+    @media screen and (min-width: 840px) {
+      margin-bottom: 64px;
+      grid-template: ". ." / 1fr 1fr;
+    }
+
+    @media screen and (min-width: 1100px) {
+      grid-gap: 24px 49px;
+    }
+  }
+
   .scn-contacts {
     &-form {
-      margin-bottom: 48px;
       max-width: 100%;
-      display: grid;
-      grid-gap: 24px;
-
-      button[type=submit] {
-        display: none;
-      }
-
-      @media screen and (min-width: 840px) {
-        margin-bottom: 64px;
-        grid-template: ". ." / 1fr 1fr;
-      }
-
-      @media screen and (min-width: 1100px) {
-        grid-gap: 24px 49px;
+      form {
+        @include formStyles;
       }
     }
     &-field + .scn-contacts-field {
       margin-top: 0;
+    }
+  }
+  .leadForm {
+    @include formStyles;
+    .form-group {
+      margin: 0;
     }
   }
 

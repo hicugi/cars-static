@@ -84,18 +84,6 @@
     }
   }
 
-  &-form {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 637px;
-
-    &__footer {
-      margin-top: 36px;
-      display: flex;
-      justify-content: center;
-    }
-  }
-
   @mixin formControlStyles() {
     padding: 15px;
     border: 1px solid #ffffff;
@@ -110,6 +98,35 @@
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.38);
+    }
+  }
+
+  &-form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 637px;
+
+    &__footer {
+      margin-top: 36px;
+      display: flex;
+      justify-content: center;
+    }
+
+    // custom styles for custom form
+    .form {
+      &-group {
+        margin-bottom: 24px;
+      }
+      &-control {
+        @include formControlStyles;
+      }
+    }
+    .captcha-box {
+      display: flex;
+      justify-content: center;
+    }
+    form > *:last-child {
+      text-align: center;
     }
   }
 
@@ -136,23 +153,6 @@
       min-height: 54px;
       height: 54px;
     }
-  }
-
-  // custom styles for custom form
-  .form {
-    &-group {
-      margin-bottom: 24px;
-    }
-    &-control {
-      @include formControlStyles;
-    }
-  }
-  .captcha-box {
-    display: flex;
-    justify-content: center;
-  }
-  form > *:last-child {
-    text-align: center;
   }
 
   .btn-primary,
