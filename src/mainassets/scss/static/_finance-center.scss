@@ -11,4 +11,17 @@
 
 @import "../section/_business.scss";
 @import "../section/_cardlist.scss";
+
 @import "../section/_contacts.scss";
+.scn-contacts-form {
+  .form-group + .form-group + .form-group + .form-group + .form-group {
+    display: grid;
+    grid-template: "title title" ". ." / 1fr 1fr;
+
+    > *:first-child {
+      margin-bottom: 8px;
+      display: block;
+      grid-area: title;
+    }
+  }
+}
